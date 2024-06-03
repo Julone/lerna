@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "target": "ES2015",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "esModuleInterop": true,
+      "sourceMap": false,
+      "baseUrl": "./",
+      "strict": false,
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "allowSyntheticDefaultImports": true,
+      "outDir": "./es",
+      "declarationDir": "./es",
+      "declaration": true,
+      "rootDirs": ["."]
+    },
+    "include": [
+      "./src/**/*",
+      "typings.d.ts"
+    ],
+    "exclude": ["./../../node_modules"]
+  }
+  
