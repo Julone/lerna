@@ -24,13 +24,11 @@ export async function setupCli() {
     )
     .help();
     
-    console.log('%cscripts\release.mjs:38 cli', 'color: #007acc;', cli);
 
   const commands = {
     release: {
       desc: 'release: update version, generate changelog, commit code',
       action: async args => {
-        console.log('%cscripts\release.mjs:41 args', 'color: #007acc;', args);
         await release(args?.execute, args?.push);
       }
     },

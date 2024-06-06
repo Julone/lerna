@@ -1,6 +1,6 @@
 {
   "name": "boke-devops-ui",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "BokeDevopsUI",
   "main": "dist/index.es.js",
   "types": "./dist/index.d.ts",
