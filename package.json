@@ -1,12 +1,12 @@
 {
   "name": "root",
   "private": true,
-  "version": "0.0.21",
+  "version": "0.0.22",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "sa": "node ./scripts/release.mjs",
+    "sa": "node ./scripts/index.mjs",
     "release": "pnpm run sa release"
   },
   "devDependencies": {

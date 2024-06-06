@@ -1,6 +1,7 @@
 {
   "name": "iggqa-js-bridge",
-  "version": "0.0.21",
+  "version": "0.0.22",
+  "private": true,
   "description": "IGGQA-JS-BRIDGE",
   "keywords": [
     "modules",
