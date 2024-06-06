@@ -1,3 +1,3 @@
-export {default as iggqaJsBridgeParent} from './parent';
-export {default as iggqaJsBridgeChild} from './child';
+export {default as bokeJsBridgeParent} from './parent';
+export {default as bokeJsBridgeChild} from './child';
 export * from './utils'

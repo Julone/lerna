@@ -1,6 +1,5 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "boke-devops",
   "version": "0.0.23",
   "workspaces": [
     "packages/*"

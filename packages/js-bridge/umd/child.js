@@ -15,16 +15,16 @@
         let methods = {};
         const triggerAppEvent = (eventName, eventData) => {
             const webviewBridge = window || null;
-            if (!webviewBridge && window.iggqaJsBridge) {
-                alert('请在 IGGQA 中运行此页面!');
+            if (!webviewBridge && window.bokeJsBridge) {
+                alert('请在 boke 中运行此页面!');
             }
             else {
                 const postdata = {
                     eventName: eventName,
                     eventData: eventData,
-                    msgScoped: "IGGQA-JS-BRIDGE"
+                    msgScoped: "boke-JS-BRIDGE"
                 };
-                utils_1.childLogger("IGGQA-JS-BRIDGE", `postMessage to ParentSdk: ${postdata}`);
+                utils_1.childLogger("boke-JS-BRIDGE", `postMessage to ParentSdk: ${postdata}`);
                 webviewBridge.parent.postMessage(JSON.stringify(postdata), '*');
             }
         };
@@ -123,8 +123,8 @@
         methods.triggerEvent = (eventName, eventArgs) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             triggerAppEvent(eventName, eventArgs);
         });
-        if (!window.iggqaJsBridge) {
-            window.iggqaJsBridge = new Proxy(methods, {
+        if (!window.bokeJsBridge) {
+            window.bokeJsBridge = new Proxy(methods, {
                 get(target, property) {
                     if (property in target) {
                         return target[property];
@@ -136,21 +136,21 @@
                 window.messageArray.forEach((callback, key) => {
                     try {
                         const { eventName, eventData, msgScoped } = JSON.parse(data);
-                        if (msgScoped != "IGGQA-JS-BRIDGE") {
-                            return; // 非IGGQA的信息不处理
+                        if (msgScoped != "boke-JS-BRIDGE") {
+                            return; // 非boke的信息不处理
                         }
                         if (eventName == key) {
                             callback(eventData);
-                            utils_1.childLogger("IGGQA-JS-BRIDGE", `postMessage to ChildSdk: ${data}`);
+                            utils_1.childLogger("boke-JS-BRIDGE", `postMessage to ChildSdk: ${data}`);
                         }
                     }
                     catch (e) {
                     }
                 });
             });
-            utils_1.childLogger("IGGQA-JS-BRIDGE", "ChildSdk is ready");
+            utils_1.childLogger("boke-JS-BRIDGE", "ChildSdk is ready");
         }
-        return window.iggqaJsBridge;
+        return window.bokeJsBridge;
     };
     exports.default = ChildHanlder();
 });

@@ -1,8 +1,8 @@
 {
-  "name": "iggqa-js-bridge",
+  "name": "boke-js-bridge",
   "version": "0.0.23",
   "private": true,
-  "description": "IGGQA-JS-BRIDGE",
+  "description": "boke-JS-BRIDGE",
   "keywords": [
     "modules",
     "stdlib",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "iggqa-js-bridge"
+    "url": "boke-js-bridge"
   },
   "license": "MIT",
   "main": "./es",
