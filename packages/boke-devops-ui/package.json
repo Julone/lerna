@@ -1,12 +1,12 @@
 {
-  "name": "boke-devops-ui",
+  "name": "boke-devops-vue",
   "version": "0.0.26",
   "description": "BokeDevopsUI",
   "main": "dist/index.es.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "start": "vite",
-    "dev": "npm start",
+    "start": "vite --host",
+    "dev": "npm start ",
     "build": "vite build",
     "pretest": "npm build",
     "test": "web-test-runner \"test/*.js\" --node-resolve",
