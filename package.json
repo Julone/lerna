@@ -1,12 +1,12 @@
 {
   "name": "boke-devops",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "sa": "node ./scripts/index.mjs",
-    "release": "pnpm run sa release",
+    "release": "pnpm run build && pnpm run sa release",
     "dev": "cd packages/boke-devops-ui && npm run dev",
     "build": "cd packages/boke-devops-ui && npm run build",
     "publish": "cd packages/boke-devops-ui && npm publish"
