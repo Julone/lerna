@@ -8,10 +8,16 @@ const props = defineProps({
   "globalConfig": {
     type: Object,
     default: () => ({})
+  },
+  "globalState": {
+    type: Object,
+    default: () => ({})
   }
 })
 
-if (props.globalConfig) {
-  mergeConfig(props.globalConfig)
-}
+
+
+mergeConfig(props)
+
+
 </script>

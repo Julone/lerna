@@ -1,5 +1,5 @@
 import { computed, toRef, toRefs, getCurrentScope, getCurrentInstance } from "vue"
-import { globalConfig } from "./../store"
+import { globalConfig, globalState } from "./../store"
 
 export const NAME_KEY = computed(() => globalConfig.avatar.user_name)
 export const AVATAR_KEY = computed(() => globalConfig.avatar.user_avatar)
@@ -12,11 +12,12 @@ export const useCustomProps = () => {
     let AVATAR_KEY = toRef(props?.customProps || {}, 'user_avatar', globalConfig.avatar.user_avatar)
     let DEPT_KEY = toRef(props?.customProps || {}, 'dept_name', globalConfig.avatar.dept_name)
     let USERID_KEY = toRef(props?.customProps || {}, 'user_id', globalConfig.avatar.user_id)
-
+    const global_always_avatar_is_hihglight = globalState.global_always_avatar_is_hihglight
     return {
         NAME_KEY,
         AVATAR_KEY,
         DEPT_KEY,
-        USERID_KEY
+        USERID_KEY,
+        global_always_avatar_is_hihglight
     }
 }

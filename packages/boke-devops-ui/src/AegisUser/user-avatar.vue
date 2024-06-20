@@ -6,7 +6,7 @@
         'wrapper-only-name': props.onlyName,
         ['el-avatar--' + props.shape]: props.animated,
         is_tag: props.tag && !props.color,
-        is_highlight: props.is_highlight,
+        is_highlight: isHigh(),
         disabled: props.disabled,
         'only-icon-style': props.onlyIcon
       }"
@@ -105,8 +105,9 @@ import { CloseOutlined } from "@ant-design/icons-vue";
 import defaultUserPng from "./default-user.png";
 import {Avatar as AAvatar, Button as AButton, Tag as ATag} from "ant-design-vue/es"
 import {useCustomProps} from "./store"
+import {isFunction} from "lodash-es"
 
-const { NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY} = useCustomProps()
+const { NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY, global_always_avatar_is_hihglight} = useCustomProps()
 const appVersion = "1.0.0";
 const emits = defineEmits([ "close"]);
 
@@ -135,7 +136,7 @@ const props = withDefaults(
     color?: string;
     disabled?: boolean;
     suffix?: string;
-    is_highlight?: boolean;
+    is_highlight?: (userinfo: any) => boolean;
   }>(),
   {
     size: 28,
@@ -154,7 +155,7 @@ const props = withDefaults(
     color: "",
     disabled: false,
     suffix: "",
-    is_highlight: false,
+    is_highlight: () => false,
   }
 );
 
@@ -172,6 +173,13 @@ const user_id = computed(() => {
 const data = ref<any>(props.data);
 const usericon = ref(props.data[AVATAR_KEY.value]);
 const isLoading = ref(false);
+
+const isHigh = ()=> {
+  if(global_always_avatar_is_hihglight) {
+    return isFunction(global_always_avatar_is_hihglight)? global_always_avatar_is_hihglight(data.value): global_always_avatar_is_hihglight
+  }
+   return isFunction(props.is_highlight)? props?.is_highlight(data.value): props.is_highlight
+}
 </script>
 
 <style lang="less" scoped>

@@ -1,21 +1,28 @@
 <template>
-  <BokeProvider :globalConfig="globalConfig">
+  <BokeProvider :globalConfig="globalConfig" :globalState="globalState">
     <div style="display: flex; align-items: center; padding: 12px">
         <BokeUserAvatar
-          is_highlight
+          :is_highlight="true"
           tag
           :data="{ name: 'Julone', dept_name: '运维部', avatar:'https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp' }"
         ></BokeUserAvatar>
 
         <BokeUserAvatarGroup 
+        :tag="true"
         :data="options.map(item => item.data)"
+        :is_highlight="v=> {
+          console.log(v);
+          return false
+        }"
       ></BokeUserAvatarGroup>
 
       <BokeUserAvatarGroup 
+          :tag="true"
       :data="options.map(item => item.data).filter((item, index) => index ==0)"
     ></BokeUserAvatarGroup>
       <BokeUserAvatarGroup 
         :data="[]"
+        tag
         placeholder=""
       ></BokeUserAvatarGroup>
       <BokeUserSelect
@@ -44,6 +51,12 @@ onMounted(() => {
   });
 });
 const globalConfig = { "avatar": { "user_name": "name", "dept_name": "dept_name", "user_avatar": "avatar" } }
+const globalState={
+  // global_always_avatar_is_hihglight(item){
+  //   return false
+  // },
+  global_always_avatar_is_hihglight: null
+}
 </script>
 <style lang="less" scoped>
 </style>

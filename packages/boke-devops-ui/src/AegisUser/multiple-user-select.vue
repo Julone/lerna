@@ -14,10 +14,9 @@
     :disabled="props.disabled || false"
     show-search
     :dropdownMatchSelectWidth="240"
-    @blur="emits('blur')"
-    @focus="emits('focus')"
     :max-tag-count="props.maxTagCount || 100"
     :filter-option="onFilterOption"
+    v-bind="$attrs"
   >
     <template #tagRender="{ label, closable, onClose, option }">
       <userAvatar
@@ -56,7 +55,7 @@
         >
           <div class="user-label">
             <a-avatar
-              :src="item?.data?.[AVATAR_KEY]"
+              :src="item?.data?.[AVATAR_KEYd]"
               :class="'avator-icon'"
               :size="18"
             >
@@ -106,6 +105,8 @@ const props = defineProps([
   "placeholder",
   "maxTagCount",
 ]);
+
+
 const  {NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY } =useCustomProps()
 
 const emits = defineEmits(["update:modelValue", "blur", "focus", "change"]);
@@ -186,5 +187,8 @@ onErrorCaptured(()=> {
   max-width: 80px;
   margin-left: 4px;
   gap: 12px;
+  /deep/ .avatar-icon {
+    flex: none;
+  }
 }
 </style>

@@ -8,7 +8,8 @@
     "sa": "node ./scripts/index.mjs",
     "release": "pnpm run sa release",
     "dev": "cd packages/boke-devops-ui && npm run dev",
-    "build": "cd packages/boke-devops-ui && npm run build"
+    "build": "cd packages/boke-devops-ui && npm run build",
+    "publish": "cd packages/boke-devops-ui && npm publish"
   },
   "devDependencies": {
     "bumpp": "^9.4.1",
