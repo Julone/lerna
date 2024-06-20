@@ -22,7 +22,7 @@
     <template #tagRender="{ label, closable, onClose, option }">
       <userAvatar
         v-if="option?.data"
-        :userinfo="option?.data"
+        :data="option?.data"
         :size="18"
         :hidePopover="true"
         :noID="true"
@@ -31,6 +31,7 @@
         :tag="true"
         :closable="closable"
         @close="onClose"
+        :customProps="$attrs.customProps"
       >
       </userAvatar>
     </template>
@@ -55,18 +56,18 @@
         >
           <div class="user-label">
             <a-avatar
-              :src="item?.data?.avatar"
+              :src="item?.data?.[AVATAR_KEY]"
               :class="'avator-icon'"
               :size="18"
             >
               <img :src="defaultUserPng" alt="" />
             </a-avatar>
             <span>
-              {{ item.data?.name }}
+              {{ item.data?.[NAME_KEY] }}
             </span>
           </div>
           <small style="margin: 0 8px; zoom: 0.8">{{
-            item.data?.department_name || item.data?.dept_name
+            item.data?.[DEPT_KEY]
           }}</small>
         </div>
       </div>
@@ -90,6 +91,11 @@ import { Select as ASelect, Avatar as AAvatar} from "ant-design-vue/es";
 import userAvatar from "./user-avatar.vue";
 import defaultUserPng from "./default-user.png";
 import { UserOutlined } from "@ant-design/icons-vue";
+
+import {useCustomProps} from "./store"
+import { onErrorCaptured } from "vue";
+
+
 const props = defineProps([
   "modelValue",
   "options",
@@ -100,6 +106,8 @@ const props = defineProps([
   "placeholder",
   "maxTagCount",
 ]);
+const  {NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY } =useCustomProps()
+
 const emits = defineEmits(["update:modelValue", "blur", "focus", "change"]);
 // userSelectOptionsAll
 const projUserTreeOptions = computed(
@@ -148,6 +156,10 @@ watch(
 onUpdated(() => {
   innerdata.value = props.modelValue;
 });
+
+onErrorCaptured(()=> {
+  return false
+})
 </script>
 <style lang="less" scoped>
 .wiki-user-caseder {

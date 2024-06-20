@@ -1,16 +1,21 @@
 {
   "name": "boke-devops",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "sa": "node ./scripts/index.mjs",
-    "release": "pnpm run sa release"
+    "release": "pnpm run sa release",
+    "dev": "cd packages/boke-devops-ui && npm run dev",
+    "build": "cd packages/boke-devops-ui && npm run build"
   },
   "devDependencies": {
     "bumpp": "^9.4.1",
     "lerna": "^8.1.3",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@devops/boke-devops-vue": "^0.0.26"
   }
 }

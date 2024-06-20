@@ -1,10 +1,10 @@
-## boke-devops-ui
+## boke-devops-vue
 练习时长2天半的组件库
 
 ## 安装
 
 ```bash
-npm i boke-devops-ui
+npm i @devops/boke-devops-vue --registry=https://nexus3.pocketcity.com/repository/boke-npm-public/
 ```
 
 ## 使用
@@ -26,7 +26,7 @@ npm i boke-devops-ui
 </template>
 <script setup lang="ts">
 import { computed, ref, onMounted } from "vue";
-import { BokeProvider, BokeUserAvatar, BokeUserSelect } from "boke-devops-ui";
+import { BokeProvider, BokeUserAvatar, BokeUserSelect } from "@devops/boke-devops-vue";
 
 const user = ref([]);
 const option = ref([]);

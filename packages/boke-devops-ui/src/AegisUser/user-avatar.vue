@@ -7,13 +7,14 @@
         ['el-avatar--' + props.shape]: props.animated,
         is_tag: props.tag && !props.color,
         is_highlight: props.is_highlight,
-        disabled: props.disabled
+        disabled: props.disabled,
+        'only-icon-style': props.onlyIcon
       }"
       v-bind="attrs"
       :style="{ padding: props.animated ? '4px' : '2px', paddingRight: '12px', borderRadius: '50px' }"
-      v-if="userinfo"
+      v-if="data"
       :color="props.color || 'default'"
-      :title="userinfo?.department_name || userinfo?.dept_name"
+      :title="data?.[DEPT_KEY]"
     >
       <div
         class="left-icon"
@@ -21,22 +22,21 @@
         @mouseenter="onShowPopover()"
         @mousemove="onShowPopover()"
         @mouseleave="onClosePopover()"
-        @click.stop="onScaleAvator()"
       >
         <a-avatar
           v-if="!props.onlyName"
           :src="usericon"
-          :class="userinfo?.roles?.join(' ') + ' avator-icon'"
+          :class="'avator-icon'"
           :size="props.size"
         >
           <img :src="defaultUserPng" alt="" />
         </a-avatar>
         <span v-else>
           <span v-if="props.linkType == 'text'">
-            {{ userinfo?.name || id }}
+            {{ user_name }}
           </span>
           <el-link v-else :type="props.linkType" :underline="false">
-            {{ userinfo?.name || id }}
+            {{ user_name }}
           </el-link>
         </span>
         <span id="download-btn-ani" v-if="props.animated" :key="userid"></span>
@@ -45,17 +45,16 @@
       <div
         class="label"
         v-if="!props.onlyIcon && !props.onlyName"
-        :class="userinfo?.roles?.join(' ')"
       >
         <span class="realname">
           {{
             isLoading
               ? "加载中..."
-              : userinfo?.name || userinfo?.real_name || "未知用户"
+              : user_name
           }}
         </span>
         <span class="id" v-if="!props.noID">
-          <span>{{ userinfo?.department_name || userinfo?.dept_name }}</span>
+          <span>{{ dept_name }}</span>
         </span>
       </div>
       <div v-if="props.suffix">{{ props.suffix }}</div>
@@ -72,10 +71,19 @@
         <CloseOutlined />
       </template>
       </a-button>
-      <slot name="default" :scoped="userinfo"></slot>
+      <slot name="default" :scoped="data"></slot>
     </a-tag>
   </div>
 </template>
+
+<script lang="ts">
+import {defineComponent} from "vue"
+
+defineComponent({
+  inheritAttrs: false,
+  name: "BokeUserAvator", // 切记：defineOptions() vue3.3才有，请使用defineComponent
+})
+</script>
 
 <script lang="ts" setup>
 import {
@@ -96,26 +104,27 @@ import UserAvator from "./index.vue";
 import { CloseOutlined } from "@ant-design/icons-vue";
 import defaultUserPng from "./default-user.png";
 import {Avatar as AAvatar, Button as AButton, Tag as ATag} from "ant-design-vue/es"
+import {useCustomProps} from "./store"
+
+const { NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY} = useCustomProps()
 const appVersion = "1.0.0";
-const emits = defineEmits(["onScaleAvator", "close"]);
+const emits = defineEmits([ "close"]);
 
 const targetRef = ref();
 const onShowPopover = () => {};
 const showViewer = ref(false);
-const onScaleAvator = () => {};
 
 const onClosePopover = () => {};
 const isMyself = ref(false);
 const attrs = useAttrs();
 const props = withDefaults(
   defineProps<{
-    id?: string | number;
     size?: number | "large" | "default" | "small";
     hidePopover?: boolean;
     onlyIcon?: boolean;
     onlyName?: boolean;
     linkType?: any;
-    userinfo?: any;
+    data?: any;
     shape?: string;
     animated?: boolean;
     insidePopover?: boolean;
@@ -126,16 +135,15 @@ const props = withDefaults(
     color?: string;
     disabled?: boolean;
     suffix?: string;
-    is_highlight?: boolean
+    is_highlight?: boolean;
   }>(),
   {
-    id: "",
     size: 28,
     hidePopover: false,
     onlyIcon: false,
     onlyName: false,
     linkType: "primary",
-    userinfo: null,
+    data: null,
     shape: "circle",
     animated: false,
     insidePopover: false,
@@ -146,13 +154,23 @@ const props = withDefaults(
     color: "",
     disabled: false,
     suffix: "",
-    is_highlight: false
+    is_highlight: false,
   }
 );
-const userid = ref<any>(props.id);
-const userinfo = ref<any>(props.userinfo);
-const firstLoad = ref(false);
-const usericon = ref(props.userinfo?.avatar);
+
+const user_name = computed(() => {
+  return props.data[NAME_KEY.value] || "未知用户";
+});
+
+const dept_name = computed(() => {
+  return props.data[DEPT_KEY.value] || "未知部门";
+});
+
+const user_id = computed(() => {
+  return props.data[USERID_KEY.value] || "未知用户";
+});
+const data = ref<any>(props.data);
+const usericon = ref(props.data[AVATAR_KEY.value]);
 const isLoading = ref(false);
 </script>
 
@@ -286,5 +304,9 @@ const isLoading = ref(false);
       cursor: pointer;
     }
   }
+}
+.only-icon-style{
+  padding: 0;
+  margin: 0;
 }
 </style>
