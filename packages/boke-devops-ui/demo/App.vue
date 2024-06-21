@@ -29,7 +29,7 @@
         :options="options"
         v-model="user"
         style="max-width: 250px"
-        :customProps="{user_name: 'name'}"
+        :customProps="{user_name: 'name', 'user_avatar': 'avatar'}"
 
       ></BokeUserSelect>
     </div>

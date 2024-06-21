@@ -5,7 +5,9 @@
   <a-popover v-else show-arrow placement="bottom" destroy-on-close>
     <div>
       <a-avatar-group>
-        <a-avatar :src="el?.[AVATAR_KEY]" v-for="(el, index) in data" v-show="index < props.max" :size="$props.size" :class="{ is_highlight: isH(el) }"></a-avatar>
+        <template v-for="(el, index) in data">
+          <a-avatar :src="el?.[AVATAR_KEY]" v-if="index < props.max"  :size="$props.size" :class="{ is_highlight: isH(el) }"></a-avatar>
+        </template>
         <a-avatar v-if="props.max < data.length" shape="circle" style="background: rgb(103 103 103)" :size="$props.size"> 共{{ data.length }}人</a-avatar>
       </a-avatar-group>
     </div>

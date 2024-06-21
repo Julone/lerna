@@ -55,7 +55,7 @@
         >
           <div class="user-label">
             <a-avatar
-              :src="item?.data?.[AVATAR_KEYd]"
+              :src="item?.data?.[AVATAR_KEY]"
               :class="'avator-icon'"
               :size="18"
             >
