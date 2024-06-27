@@ -9,6 +9,8 @@ import { Button as BokeButton } from "ant-design-vue/es"
 // export { RangePicker as BokeRangePicker } from "ant-design-vue"
 import { Segmented as BokeSegmented } from "ant-design-vue/es"
 
+import BokeMicroAppProvider from "./Microapp/MicroAppProvider.vue"
+
 import "./style/variables.less"
 
 export {
@@ -18,6 +20,8 @@ export {
   BokeTag,
   BokeButton,
   BokeUserAvatarGroup,
+  BokeMicroAppProvider,
+  
   // BokeRangePicker,
 }
 

@@ -1,12 +1,12 @@
 <template>
   <a-typography-text v-if="!data || data.length === 0" type="info">{{props.placeholder}}</a-typography-text>
-  <rmp-user-avatar v-else-if="data.length == 1" :data="data[0]" :size="size" :hide-popover="false"
+  <rmp-user-avatar v-else-if="data.length == 1" :data="data[0]" :key="data[0]?.[AVATAR_KEY]" :size="size" :hide-popover="false"
     :show-text="props.showText" :is_highlight="() => props.is_highlight(data[0])"  :tag="props.tag"></rmp-user-avatar>
   <a-popover v-else show-arrow placement="bottom" destroy-on-close>
     <div>
       <a-avatar-group>
         <template v-for="(el, index) in data">
-          <a-avatar :src="el?.[AVATAR_KEY]" v-if="index < props.max"  :size="$props.size" :class="{ is_highlight: isH(el) }"></a-avatar>
+          <a-avatar :src="el?.[AVATAR_KEY]" :key="el?.[AVATAR_KEY]" v-if="index < props.max"  :size="$props.size" :class="{ is_highlight: isH(el) }"></a-avatar>
         </template>
         <a-avatar v-if="props.max < data.length" shape="circle" style="background: rgb(103 103 103)" :size="$props.size"> 共{{ data.length }}人</a-avatar>
       </a-avatar-group>
@@ -14,7 +14,7 @@
     <!-- <div slot="content">触发元素是指触发浮层内容显示的元素</div> -->
     <template #content>
       <div style="padding: 8px; max-width: 320px;  gap: 16px; display: flex; flex-wrap: wrap">
-        <rmp-user-avatar v-for="(el, index) in data" :key="index" :data="el" :size="'small'" :show-text="true"
+        <rmp-user-avatar v-for="(el, index) in data" :key="el?.[AVATAR_KEY]" :data="el" :size="'small'" :show-text="true"
           style="display: inline-flex" :is_highlight="() => props.is_highlight(el)" :tag="props.tag" ></rmp-user-avatar>
       </div>
     </template>
@@ -65,7 +65,7 @@ const props = defineProps({
 });
 
 const attrs = useAttrs()
-const { AVATAR_KEY, global_always_avatar_is_hihglight } = useCustomProps()
+const { AVATAR_KEY, global_always_avatar_is_hihglight, NAME_KEY, DEPT_KEY } = useCustomProps()
 const isH = (item) => {
   if(global_always_avatar_is_hihglight) {
     return isFunction(global_always_avatar_is_hihglight)? global_always_avatar_is_hihglight(item): global_always_avatar_is_hihglight

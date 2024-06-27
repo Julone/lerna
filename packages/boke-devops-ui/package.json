@@ -8,8 +8,8 @@
     "start": "vite --host",
     "dev": "npm start ",
     "build": "vite build",
-    "pretest": "npm build",
-    "test": "web-test-runner \"test/*.js\" --node-resolve",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint 'src/**/*.{js,ts,tsx,jsx}' 'examples/**/*.{js,ts,tsx,jsx}' --fix"
   },
   "files": [
