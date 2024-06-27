@@ -4,7 +4,7 @@
 <script setup lang="tsx">
 import { onMounted } from 'vue';
 import blankVue from "./blank.vue"
-import _ from "lodash"
+import {isEmpty,cloneDeep } from "lodash-es"
 
 const props = defineProps({
     'appName': {
@@ -29,7 +29,7 @@ const isWujieEnv = !!window.$wujie;
 
 onMounted(() => {
     if (isWujieEnv) {
-        if (!_.isEmpty(props.mapRoutes)) {
+        if (!isEmpty(props.mapRoutes)) {
             const namespace = props.appName;
 
             const rootRoutes = {
@@ -37,7 +37,7 @@ onMounted(() => {
                 components: {
                     default: blankVue,
                 },
-                children: _.cloneDeep(props.mapRoutes).map(function digui(element) {
+                children: cloneDeep(props.mapRoutes).map(function digui(element) {
                     element.name = namespace + '_' + element.name;
                     element.path = `/${namespace}/` + (element.path.startsWith('/') ? element.path.substring(1) : element.path);
                     if (element.children) {
