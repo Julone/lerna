@@ -3,7 +3,6 @@
 </template>
 <script setup lang="tsx">
 import { onMounted } from 'vue';
-import blankVue from "./blank.vue"
 import {isEmpty,cloneDeep } from "lodash-es"
 
 const props = defineProps({
@@ -31,23 +30,6 @@ onMounted(() => {
     if (isWujieEnv) {
         if (!isEmpty(props.mapRoutes)) {
             const namespace = props.appName;
-
-            const rootRoutes = {
-                name: namespace,
-                components: {
-                    default: blankVue,
-                },
-                children: cloneDeep(props.mapRoutes).map(function digui(element) {
-                    element.name = namespace + '_' + element.name;
-                    element.path = `/${namespace}/` + (element.path.startsWith('/') ? element.path.substring(1) : element.path);
-                    if (element.children) {
-                        element.children = element.children.map(digui)
-                    }
-                    return element
-                }),
-            }
-            props.router.addRoute(rootRoutes);
-            props.router.replace(props.router.currentRoute.value.fullPath)
         }
 
         props.router.beforeEach((to, from, next)=> {
@@ -64,7 +46,5 @@ onMounted(() => {
         })
     }
 })
-
-
 
 </script>
