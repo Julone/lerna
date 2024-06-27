@@ -1,6 +1,6 @@
 {
   "name": "@devops/boke-devops-vue",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "BokeDevopsUI",
   "main": "dist/index.es.js",
   "types": "./dist/index.d.ts",
