@@ -5,7 +5,9 @@ import dts from "vite-plugin-dts";
 import createVuePlugin from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { visualizer } from 'rollup-plugin-visualizer';
-
+import vueTest from '@vitejs/plugin-vue';
+import vueJsxTest from '@vitejs/plugin-vue-jsx';
+const isCustomElement = (tag) => tag.startsWith('td-') || tag.startsWith('tdesign-theme');
 // https://vitejs.dev/config/
 export default defineConfig({
   build:
@@ -37,7 +39,14 @@ export default defineConfig({
           },
         },
   plugins: [
-    createVuePlugin(),
+    createVuePlugin({
+      ssr: false,
+      template: {
+        compilerOptions: {
+          isCustomElement,
+        },
+      },
+    }),
     dts({
       rollupTypes: true
     }),
@@ -78,7 +87,4 @@ export default defineConfig({
       allow: [".."],
     },
   },
-  test: {
-    
-  }
 });

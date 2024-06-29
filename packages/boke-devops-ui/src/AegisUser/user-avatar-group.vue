@@ -43,10 +43,6 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    // default: (v)=>{
-    //   console.log('%cpackagv', 'color: #007acc;', v, 'placeholder' in v);
-    //   return 'placeholder' in v? v.placeholder : '暂无人员'
-    // },
     default: "暂无人员"
   },
   max: {
@@ -75,6 +71,6 @@ const isH = (item) => {
 </script>
 <style lang="less" scoped>
 .is_highlight{
-  box-shadow: 0 2px 8px -1px var(--boke-color-primary);
+  box-shadow: 0 0px 0px 1.5px var(--boke-color-primary);
 }
 </style>

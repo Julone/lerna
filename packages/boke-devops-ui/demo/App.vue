@@ -52,10 +52,10 @@ onMounted(() => {
 });
 const globalConfig = { "avatar": { "user_name": "name", "dept_name": "dept_name", "user_avatar": "avatar" } }
 const globalState={
-  // global_always_avatar_is_hihglight(item){
-  //   return false
-  // },
-  global_always_avatar_is_hihglight: null
+  global_always_avatar_is_hihglight(item){
+    return true
+  },
+  // global_always_avatar_is_hihglight: null
 }
 </script>
 <style lang="less" scoped>

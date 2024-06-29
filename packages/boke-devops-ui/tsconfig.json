@@ -26,7 +26,7 @@
     "src/**/*.vue",
     "src/**/*.d.ts",
     "src/**/*.tsx"
-  ],
+, "src/AegisUser/tests/Avatar.test.jsx", "src/AegisUser/tests/Avatar.test.jsx", "test/Provider-test.vue"  ],
   "exclude": [
     "node_modules"
   ]

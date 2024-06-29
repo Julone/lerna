@@ -13,13 +13,22 @@
     "test": "cd packages/boke-devops-ui && npm run test"
   },
   "devDependencies": {
-    "@vitest/ui": "^1.6.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "1.6.0",
+    "@vue/test-utils": "^2.0.0",
     "bumpp": "^9.4.1",
-    "lerna": "^8.1.3",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "jsdom": "^24.1.0",
+    "lerna": "^8.1.5",
+    "less": "^4.2.0",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0",
+    "vitest-fetch-mock": "^0.2.2",
+    "vue-router": "^4.4.0"
   },
   "dependencies": {
-    "@devops/boke-devops-vue": "^0.0.26"
+    "@devops/boke-devops-vue": "^0.0.26",
+    "unplugin-vue-macros": "^2.9.5"
   }
 }

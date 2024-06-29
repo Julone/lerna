@@ -3,7 +3,7 @@
 </template>
 <script setup lang="tsx">
 
-import { globalConfig, mergeConfig } from "./store"
+import { globalConfig, mergeConfig } from "../store"
 const props = defineProps({
   "globalConfig": {
     type: Object,
@@ -15,9 +15,5 @@ const props = defineProps({
   }
 })
 
-
-
 mergeConfig(props)
-
-
 </script>
