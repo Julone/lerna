@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Link changes the state when hovered 1`] = `
+<div
+  data-v-6fc62be8=""
+  style="display: inline-flex;"
+>
+  <span
+    class="ant-tag css-dev-only-do-not-override-16pw25h ant-tag-default boke-useravator-wrapper"
+    data-v-6fc62be8=""
+    style="padding: 2px 12px 2px 2px; border-radius: 50px;"
+  >
+    
+    <div
+      class="left-icon"
+      data-v-6fc62be8=""
+    >
+       asdfasdfssdfasdfasdf 
+      <span
+        class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
+        data-v-6fc62be8=""
+        style="width: 28px; height: 28px; line-height: 28px; font-size: 18px;"
+      >
+        <img
+          src="https://s1-imfile.fewebp"
+        />
+      </span>
+    </div>
+    
+    
+    <div
+      class="label"
+      data-v-6fc62be8=""
+    >
+      <span
+        class="realname"
+        data-v-6fc62be8=""
+      >
+        Julone
+      </span>
+      <span
+        class="id"
+        data-v-6fc62be8=""
+      >
+        <span
+          data-v-6fc62be8=""
+        >
+          运维部
+        </span>
+      </span>
+    </div>
+    <!--v-if-->
+    <!--v-if-->
+    
+    sdafasd
+    
+    
+    <!---->
+  </span>
+</div>
+`;

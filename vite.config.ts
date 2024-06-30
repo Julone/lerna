@@ -7,29 +7,11 @@ import VueMacros from 'unplugin-vue-macros/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  configureWebpack: {
-    resolve: {
-      symlinks: false,
-      alias: {
-        vue: resolve("./node_modules/vue"),
-      },
-    },
-  },
-  test: {
-    environment: "jsdom",
-    // setupFiles: resolve(__dirname, "./test-setup.js"),
-    testTimeout: 5000,
-    transformMode: {
-      web: [/\.[jt]sx$/],
-    },
-    coverage: {
-      reporter: ["text", "json", "html"],
-    },
-  },
+ 
   plugins: [
     VueMacros({
-      setupComponent: false,
-      setupSFC: false,
+      setupComponent: true,
+      setupSFC: true,
       plugins: {
         vue: Vue(),
         vueJsx: VueJsx(),

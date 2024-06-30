@@ -1,13 +1,13 @@
 <template>
-  <div style="display:inline-flex" >
+  <div style="display:inline-flex">
     <ATag class="boke-useravator-wrapper" :class="{
       'wrapper-only-name': props.onlyName,
       is_tag: props.tag && !props.color,
       is_highlight: isHigh(),
       disabled: props.disabled,
       'only-icon-style': props.onlyIcon
-    }" v-bind="attrs" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }"
-      v-if="data" :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
+    }" v-bind="attrs" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }" v-if="data"
+      :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
       <div class="left-icon" ref="targetRef" @mouseenter="onShowPopover()" @mousemove="onShowPopover()"
         @mouseleave="onClosePopover()">
         <AAvatar v-if="!props.onlyName" :src="user_icon" :class="'avator-icon'" :size="props.size">
@@ -21,16 +21,15 @@
             {{ user_name }}
           </el-link>
         </span>
-        <span id="download-btn-ani" :key="userid"></span>
       </div>
-      <!-- <slot name="prefix"></slot> -->
+      <slot name="prefix"></slot>
       <div class="label" v-if="!props.onlyIcon && !props.onlyName">
         <span class="realname">
           {{
-            isLoading
-              ? "加载中..."
-              : user_name
-          }}
+      isLoading
+        ? "加载中..."
+        : user_name
+    }}
         </span>
         <span class="id" v-if="!props.noID">
           <span>{{ dept_name }}</span>
@@ -160,7 +159,7 @@ export default defineComponent({
       default: () => false
     }
   },
-  setup(props, {attrs}) {
+  setup(props, { attrs }) {
     const { NAME_KEY, AVATAR_KEY, DEPT_KEY, USERID_KEY, global_always_avatar_is_hihglight } = useCustomProps()
     const appVersion = "1.0.0";
     const emits = defineEmits(["close"]);
