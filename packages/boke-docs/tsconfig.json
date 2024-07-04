@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@devops/boke-docs": ["./src"]
+    },
+    "allowJs": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "strictNullChecks": false
+  },
+  "include": [".dumirc.ts", "src/**/*", "docs/**/*"]
+}

@@ -1,3 +1,4 @@
 node_modules/
 vite-analysis-build-chart.html
 **/*.html
+packages/boke-docs/.dumi/**/*
