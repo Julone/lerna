@@ -6,7 +6,6 @@ import {loadCliOptions}from "./configs.mjs"
 import { release } from './release.mjs';
 export async function setupCli() {
   const cliOptions = await loadCliOptions();
-  console.log('%cscripts\release.mjs:20 cliOptions', 'color: #007acc;', cliOptions);
 
   const cli = cac(blue('soybean-admin'));
 
