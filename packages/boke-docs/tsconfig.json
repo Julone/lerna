@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@devops/boke-docs": ["./src"]
+      "@devops/boke-docs": ["./src"],
+      "@devops/boke-devops-vue": ["./../boke-devops-vue"],
+      "vue": ["./node_modules/vue"]
     },
     "allowJs": true,
     "jsx": "preserve",

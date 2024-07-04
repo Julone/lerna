@@ -48,56 +48,31 @@ export default {
 ## Functional Component
 
 ```tsx
-import { Article } from '@devops/boke-docs';
-function ArticleWrapper() {
-  return <Article></Article>;
-}
+import { defineComponent } from './../../node_modules/vue';
+import { BokeUserAvatar } from '@devops/boke-devops-vue';
+// function ArticleWrapper() {
+//   return <BokeUserAvatar     is_highlight={true}
+//           tag
+//           data={{ name: 'Julone', dept_name: '运维部', avatar:'https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp' }}
+// ></BokeUserAvatar>;
+// }
 
-export default ArticleWrapper;
+// export default ArticleWrapper;
+
+export default defineComponent({
+  setup() {
+    function handleClick() {
+      alert('Using defineComponent API');
+    }
+    return () => <BokeUserAvatar     is_highlight={true}
+           tag
+           data={{ name: 'Julone', dept_name: '运维部', avatar:'https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp' }}
+ ></BokeUserAvatar>;
+  },
+});
 ```
 
 ## Button API
 
 ### Props
 
-<API id="Button" type="props"></API>
-
-### Slots
-
-<API id="Button" type="slots"></API>
-
-### Events
-
-<API id="Button" type="events"></API>
-
-### Methods
-
-<API id="Button" type="imperative"></API>
-
-## Article API
-
-## Props
-
-<API id="Article" type="props"></API>
-
-## Events
-
-<API id="Article" type="events"></API>
-
-## Slots
-
-<API id="Article" type="slots"></API>
-
-## List API
-
-:::warning
-The List component is defined in the form of `defineComponent(<T>function() {})`, so only Props and Events can be obtained
-:::
-
-### Props
-
-<API id="List" type="props"></API>
-
-### Events
-
-<API id="List" type="events"></API>

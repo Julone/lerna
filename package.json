@@ -7,9 +7,9 @@
   "scripts": {
     "sa": "node ./scripts/index.mjs",
     "release": "pnpm run build && pnpm run sa release",
-    "dev": "cd packages/boke-devops-ui && npm run dev",
-    "build": "cd packages/boke-devops-ui && npm run build",
-    "publish": "cd packages/boke-devops-ui && npm publish",
+    "dev": "cd packages/boke-docs && npm run dev",
+    "build": "cd packages/boke-devops-vue && npm run build",
+    "publish": "cd packages/boke-devops-vue && npm publish",
     "test": "vitest --ui",
     "test:snap": "vitest --ui -u"
   },
@@ -29,9 +29,15 @@
     "vue-router": "^4.4.0"
   },
   "dependencies": {
+    "@dumijs/preset-vue": "^2.3.0",
     "happy-dom": "^14.12.3",
     "jest": "^29.7.0",
     "unplugin-vue-macros": "^2.9.5",
     "vue": "^3.4.31"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umijs/dumi",
+    "directory": "@devops/boke-docs"
   }
 }

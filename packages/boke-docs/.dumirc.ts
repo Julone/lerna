@@ -2,7 +2,9 @@
 // import Components from 'unplugin-vue-components/webpack';
 // import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import path from 'node:path';
-export default {
+
+import {defineConfig } from 'dumi'
+export default ({
   mfsu: false,
   apiParser: {},
   resolve: {
@@ -10,8 +12,15 @@ export default {
   },
   html2sketch: {},
   presets: [require.resolve('@dumijs/preset-vue')],
+  // 默认重定向到子包的 src 文件夹
+  monorepoRedirect: {
+    
+  },
   vue: {
     tsconfigPath: path.resolve(__dirname, './tsconfig.vue.json'),
+    compiler: {
+      babelStandaloneCDN: 'https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.22.17/babel.min.js'
+    },
     checkerOptions: {
       externalSymbolLinkMappings: {
         typescript: {
@@ -24,7 +33,9 @@ export default {
         },
       },
     },
+    
   },
+  
   themeConfig: {
     nav: [
       { title: 'SFC', link: '/components/foo' },
@@ -33,6 +44,8 @@ export default {
     ],
   },
   chainWebpack(memo: any) {
+
+    // memo.resolve.symlinks(false)
     memo.plugin('unplugin-element-plus').use(
       require('unplugin-element-plus/webpack')({
         useSource: true,
@@ -46,4 +59,4 @@ export default {
     // }));
     return memo;
   },
-};
+})
