@@ -39,8 +39,11 @@ export default ({
   
   themeConfig: {
     nav: [
+      { title: '首页', link: '/' },
+      { title: '组件', link: '/components' },
       { title: '3rd party framework', link: '/framework-test' },
     ],
+    name: "boke-devops"
   },
   chainWebpack(memo: any) {
 
