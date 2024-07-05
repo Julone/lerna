@@ -8,7 +8,7 @@ export default ({
   mfsu: false,
   apiParser: {},
   resolve: {
-    entryFile: './src/index.ts',
+    entryFile: './../boke-devops-vue/src/index.ts',
   },
   html2sketch: {},
   presets: [require.resolve('@dumijs/preset-vue')],
@@ -39,8 +39,6 @@ export default ({
   
   themeConfig: {
     nav: [
-      { title: 'SFC', link: '/components/foo' },
-      { title: 'JSX', link: '/components/button' },
       { title: '3rd party framework', link: '/framework-test' },
     ],
   },

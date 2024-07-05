@@ -1,7 +1,7 @@
 <template>
     <slot name="default"></slot>
 </template>
-<script setup lang="tsx">
+<script setup lang="jsx">
 import { onMounted } from 'vue';
 import {isEmpty,cloneDeep } from "lodash-es"
 
@@ -41,7 +41,7 @@ onMounted(() => {
             }
         })
 
-        window.$wujie.bus.$on(props.appName + '-router-change', (path: string) => {
+        window.$wujie.bus.$on(props.appName + '-router-change', (path) => {
             props.router.push(path)
         })
     }

@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="tsx">
-import {useAttrs} from "vue"
+import { useAttrs } from "vue"
 import RmpUserAvatar from './user-avatar.vue';
 import { Popover as APopover, AvatarGroup as AAvatarGroup, Avatar as AAvatar, TypographyText as ATypographyText} from "ant-design-vue"
 import { useCustomProps } from "./store"
@@ -60,9 +60,9 @@ const props = defineProps({
   }
 });
 
-const attrs = useAttrs()
+const attrs =  useAttrs ()
 const { AVATAR_KEY, global_always_avatar_is_hihglight, NAME_KEY, DEPT_KEY } = useCustomProps()
-const isH = (item) => {
+const isH = (item: any) => {
   if(global_always_avatar_is_hihglight) {
     return isFunction(global_always_avatar_is_hihglight)? global_always_avatar_is_hihglight(item): global_always_avatar_is_hihglight
   }
