@@ -1,4 +1,4 @@
-import { computed, toRef, toRefs, getCurrentScope, getCurrentInstance } from "vue"
+import { computed, toRef,  getCurrentInstance } from "vue"
 import { globalConfig, globalState } from "./../store"
 
 export const NAME_KEY = computed(() => globalConfig.avatar.user_name)
@@ -7,7 +7,7 @@ export const DEPT_KEY = computed(() => globalConfig.avatar.dept_name)
 export const USERID_KEY = computed(() => globalConfig.avatar.user_id)
 
 export const useCustomProps = () => {
-    const props = getCurrentInstance()?.attrs;
+    const props = getCurrentInstance()?.attrs as any;
     let NAME_KEY = toRef(props?.customProps || {}, 'user_name', globalConfig.avatar.user_name)
     let AVATAR_KEY = toRef(props?.customProps || {}, 'user_avatar', globalConfig.avatar.user_avatar)
     let DEPT_KEY = toRef(props?.customProps || {}, 'dept_name', globalConfig.avatar.dept_name)

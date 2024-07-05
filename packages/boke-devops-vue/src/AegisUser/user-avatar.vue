@@ -50,21 +50,10 @@
 <script lang="tsx">
 import { defineComponent } from "vue"
 import {
-  defineProps,
-  watchEffect,
   ref,
-  reactive,
-  withDefaults,
-  inject,
-  createVNode,
-  useSlots,
-  render,
   defineEmits,
   computed,
-  useAttrs
 } from "vue";
-import { CloseOutlined } from "@ant-design/icons-vue";
-import defaultUserPng from "./default-user.png";
 import { Avatar as AAvatar, Button as AButton, Tag as ATag } from "ant-design-vue/es"
 import { useCustomProps } from "./store"
 import { isFunction } from "lodash-es"

@@ -79,7 +79,6 @@ import {
   defineProps,
   ref,
   computed,
-  watchEffect,
   nextTick,
   watch,
   onUpdated,

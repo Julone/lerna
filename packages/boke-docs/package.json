@@ -18,7 +18,7 @@
     "@dumijs/preset-vue": "^2.3.0",
     "@vue/compiler-sfc": "^3.0.5",
     "dayjs": "^1.11.10",
-    "dumi": "^2.4.5",
+    "dumi": "~2.4.5",
     "element-plus": "^2.3.14",
     "pinia": "^2.1.7",
     "react": "^18.2.0",

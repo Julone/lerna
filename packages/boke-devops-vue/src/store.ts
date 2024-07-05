@@ -14,7 +14,7 @@ export const globalState = reactive({
     global_always_avatar_is_hihglight: null, //如果设置这个, 自带的头像高亮将失效
 })
 
-export const mergeConfig = (props) => {
+export const mergeConfig = (props : any) => {
     if (props.globalConfig) {
         merge(globalConfig, props.globalConfig)
     }

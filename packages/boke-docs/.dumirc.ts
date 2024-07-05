@@ -14,7 +14,8 @@ export default ({
   presets: [require.resolve('@dumijs/preset-vue')],
   // 默认重定向到子包的 src 文件夹
   monorepoRedirect: {
-    
+    srcDir: [ 'src', "./../boke-devops-vue/src"],
+
   },
   vue: {
     tsconfigPath: path.resolve(__dirname, './tsconfig.vue.json'),

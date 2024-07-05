@@ -3,8 +3,7 @@
     "baseUrl": "./",
     "paths": {
       "@devops/boke-docs": ["./src"],
-      "@devops/boke-devops-vue": ["./../boke-devops-vue"],
-      "vue": ["./node_modules/vue"]
+      "@devops/boke-devops-vue": ["./../boke-devops-vue"]
     },
     "allowJs": true,
     "jsx": "preserve",

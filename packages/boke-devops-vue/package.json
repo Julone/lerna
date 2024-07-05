@@ -7,7 +7,7 @@
   "scripts": {
     "start": "vite --host",
     "dev": "npm start ",
-    "build": "vite build",
+    "build": "tsc --emitDeclarationOnly -d && vite build",
     "lint": "eslint 'src/**/*.{js,ts,tsx,jsx}' 'examples/**/*.{js,ts,tsx,jsx}' --fix"
   },
   "files": [
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.182",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^16.4.13",
     "@types/qs": "^6.9.7",
     "@vitejs/plugin-vue": "^2.3.1",

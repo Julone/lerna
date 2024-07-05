@@ -48,7 +48,10 @@ export default {
 ## Functional Component
 
 ```tsx
-import { defineComponent } from './../../node_modules/vue';
+/**
+ * compact: true
+ */
+import { defineComponent } from 'vue';
 import { BokeUserAvatar } from '@devops/boke-devops-vue';
 // function ArticleWrapper() {
 //   return <BokeUserAvatar     is_highlight={true}
@@ -62,7 +65,7 @@ import { BokeUserAvatar } from '@devops/boke-devops-vue';
 export default defineComponent({
   setup() {
     function handleClick() {
-      alert('Using defineComponent API');
+      alert('Using defineComponent AP地方I');
     }
     return () => <BokeUserAvatar     is_highlight={true}
            tag
@@ -75,4 +78,3 @@ export default defineComponent({
 ## Button API
 
 ### Props
-

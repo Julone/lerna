@@ -11,7 +11,7 @@ export default mergeConfig(
       },
     test: {
       testTransformMode:"web",
-      environment: 'happy-dom',
+      environment: 'jsdom',
       // setupFiles: resolve(__dirname, "./test-setup.js"),
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),

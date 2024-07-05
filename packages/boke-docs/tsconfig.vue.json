@@ -6,5 +6,5 @@
     "jsxImportSource": "vue",
     "strictNullChecks": false
   },
-  "include": ["src/**/*", "docs/**/*"]
+  "include": ["src/**/*", "docs/**/*", "./../boke-devops-vue/src"]
 }
