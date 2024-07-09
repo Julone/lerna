@@ -25,7 +25,7 @@
 import { useAttrs } from "vue"
 import RmpUserAvatar from './user-avatar.vue';
 import { Popover as APopover, AvatarGroup as AAvatarGroup, Avatar as AAvatar, TypographyText as ATypographyText} from "ant-design-vue"
-import { useCustomProps } from "./store"
+import { useCustomProps } from "./avatar.store"
 import {isFunction} from "lodash-es"
 
 const props = defineProps({

@@ -34,7 +34,8 @@
   "dependencies": {
     "@dumijs/preset-vue": "^2.3.0",
     "unplugin-vue-macros": "^2.9.5",
-    "vue": "^3.4.31"
+    "vue": "^3.4.31",
+    "@devops/boke-devops-vue": "workspace:*"  
   },
   "repository": {
     "type": "git",

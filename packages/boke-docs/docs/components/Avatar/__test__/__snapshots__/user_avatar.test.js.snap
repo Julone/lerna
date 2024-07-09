@@ -1,0 +1,242 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`user avatar is normal 1`] = `
+<div>
+  <div
+    data-v-7871c292=""
+    style="display: inline-flex;"
+  >
+    <span
+      class="ant-tag css-dev-only-do-not-override-16pw25h ant-tag-default boke-useravator-wrapper is_tag"
+      data-v-7871c292=""
+      style="padding: 2px 12px 2px 2px; border-radius: 50px;"
+    >
+      
+      <div
+        class="left-icon"
+        data-v-7871c292=""
+      >
+        <span
+          class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
+          data-v-7871c292=""
+          style="width: 28px; height: 28px; line-height: 28px; font-size: 18px;"
+        >
+          <img
+            src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
+          />
+        </span>
+      </div>
+      
+      
+      <div
+        class="label"
+        data-v-7871c292=""
+      >
+        <span
+          class="realname"
+          data-v-7871c292=""
+        >
+          Julone
+        </span>
+        <span
+          class="id"
+          data-v-7871c292=""
+        >
+          <span
+            data-v-7871c292=""
+          >
+            运维部
+          </span>
+        </span>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+      
+      <!---->
+    </span>
+  </div>
+  <div
+    data-v-7871c292=""
+    style="display: inline-flex;"
+  >
+    <span
+      class="ant-tag css-dev-only-do-not-override-16pw25h ant-tag-default boke-useravator-wrapper is_tag"
+      data-v-7871c292=""
+      style="padding: 2px 12px 2px 2px; border-radius: 50px;"
+    >
+      
+      <div
+        class="left-icon"
+        data-v-7871c292=""
+      >
+        <span
+          class="avator-icon ant-avatar ant-avatar-circle css-dev-only-do-not-override-16pw25h"
+          data-v-7871c292=""
+          style="width: 28px; height: 28px; line-height: 28px; font-size: 18px;"
+        >
+          <span
+            class="ant-avatar-string"
+            style="opacity: 0;"
+          >
+            <!---->
+          </span>
+        </span>
+      </div>
+      
+      
+      <div
+        class="label"
+        data-v-7871c292=""
+      >
+        <span
+          class="realname"
+          data-v-7871c292=""
+        >
+          未知用户
+        </span>
+        <span
+          class="id"
+          data-v-7871c292=""
+        >
+          <span
+            data-v-7871c292=""
+          >
+            未知部门
+          </span>
+        </span>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+      
+      <!---->
+    </span>
+  </div>
+</div>
+`;
+
+exports[`with provider 1`] = `
+<div>
+  <h4>
+    Inside of Provider
+  </h4>
+  
+  <div
+    data-v-7871c292=""
+    style="display: inline-flex;"
+  >
+    <span
+      class="ant-tag css-dev-only-do-not-override-16pw25h ant-tag-default boke-useravator-wrapper is_tag is_highlight"
+      data-v-7871c292=""
+      style="padding: 2px 12px 2px 2px; border-radius: 50px;"
+    >
+      
+      <div
+        class="left-icon"
+        data-v-7871c292=""
+      >
+        <span
+          class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
+          data-v-7871c292=""
+          style="width: 28px; height: 28px; line-height: 28px; font-size: 18px;"
+        >
+          <img
+            src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
+          />
+        </span>
+      </div>
+      
+      
+      <div
+        class="label"
+        data-v-7871c292=""
+      >
+        <span
+          class="realname"
+          data-v-7871c292=""
+        >
+          Julone-new
+        </span>
+        <span
+          class="id"
+          data-v-7871c292=""
+        >
+          <span
+            data-v-7871c292=""
+          >
+            运维部
+          </span>
+        </span>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+      
+      <!---->
+    </span>
+  </div>
+  
+  <h4>
+    Out of Provider
+  </h4>
+  <div
+    data-v-7871c292=""
+    style="display: inline-flex;"
+  >
+    <span
+      class="ant-tag css-dev-only-do-not-override-16pw25h ant-tag-default boke-useravator-wrapper is_tag"
+      data-v-7871c292=""
+      style="padding: 2px 12px 2px 2px; border-radius: 50px;"
+    >
+      
+      <div
+        class="left-icon"
+        data-v-7871c292=""
+      >
+        <span
+          class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
+          data-v-7871c292=""
+          style="width: 28px; height: 28px; line-height: 28px; font-size: 18px;"
+        >
+          <img
+            src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
+          />
+        </span>
+      </div>
+      
+      
+      <div
+        class="label"
+        data-v-7871c292=""
+      >
+        <span
+          class="realname"
+          data-v-7871c292=""
+        >
+          Julone
+        </span>
+        <span
+          class="id"
+          data-v-7871c292=""
+        >
+          <span
+            data-v-7871c292=""
+          >
+            运维部
+          </span>
+        </span>
+      </div>
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+      
+      <!---->
+    </span>
+  </div>
+</div>
+`;

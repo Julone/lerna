@@ -19,7 +19,7 @@
     v-bind="$attrs"
   >
     <template #tagRender="{ label, closable, onClose, option }">
-      <userAvatar
+      <BokeUserAvatar
         v-if="option?.data"
         :data="option?.data"
         :size="18"
@@ -32,7 +32,7 @@
         @close="onClose"
         :customProps="$attrs.customProps"
       >
-      </userAvatar>
+      </BokeUserAvatar>
     </template>
     <template #placeholder>
       <div
@@ -86,11 +86,11 @@ import {
 
 import {find as _find} from "lodash-es";
 import { Select as ASelect, Avatar as AAvatar} from "ant-design-vue/es";
-import userAvatar from "./user-avatar.vue";
+import {BokeUserAvatar, avatarStore} from "./../index";
 import { UserOutlined } from "@ant-design/icons-vue";
 
-import {useCustomProps} from "./store"
 import { onErrorCaptured } from "vue";
+const {useCustomProps} = avatarStore;
 
 const props = defineProps([
   "modelValue",

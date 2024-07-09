@@ -54,7 +54,7 @@ import {
   computed,
 } from "vue";
 import { Avatar as AAvatar, Button as AButton, Tag as ATag } from "ant-design-vue/es"
-import { useCustomProps } from "./store"
+import { useCustomProps } from "./avatar.store"
 import { isFunction } from "lodash-es"
 import {CloseOutlined} from "@ant-design/icons-vue"
 
@@ -172,7 +172,7 @@ export default defineComponent({
     const user_id = computed(() => {
       return props.data[USERID_KEY.value] || "未知用户";
     });
-    const data = ref<any>(props.data);
+    const data = ref(props.data);
     const user_icon = ref(props.data[AVATAR_KEY.value]);
     const isLoading = ref(false);
 

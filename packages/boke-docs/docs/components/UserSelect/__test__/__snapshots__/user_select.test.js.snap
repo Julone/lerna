@@ -1,0 +1,220 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`user select is normal 1`] = `
+<div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+     已选择用户: 
+    <b>
+      []
+    </b>
+  </div>
+  <div
+    class="ant-select css-dev-only-do-not-override-16pw25h wiki-user-caseder ant-select-multiple ant-select-allow-clear ant-select-show-search"
+    customprops="[object Object]"
+    data-v-37a1b7d7=""
+    style="flex: 1; min-width: 250px;"
+  >
+    <!---->
+    
+    <div
+      class="ant-select-selector"
+    >
+      
+      <div
+        class="ant-select-selection-overflow"
+      >
+        
+        
+        <!---->
+        <div
+          class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+          style="opacity: 1;"
+        >
+          
+          <div
+            class="ant-select-selection-search"
+            style="width: 0px;"
+          >
+            <input
+              aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+              aria-autocomplete="list"
+              aria-controls="rc_select_TEST_OR_SSR_list"
+              aria-haspopup="listbox"
+              aria-owns="rc_select_TEST_OR_SSR_list"
+              autocomplete="off"
+              class="ant-select-selection-search-input"
+              id="rc_select_TEST_OR_SSR"
+              lazy="true"
+              readonly=""
+              role="combobox"
+              style="opacity: 0;"
+              type="search"
+              unselectable="on"
+              value=""
+            />
+            <span
+              aria-hidden="true"
+              class="ant-select-selection-search-mirror"
+            >
+              
+               
+            </span>
+          </div>
+          
+        </div>
+        <!---->
+      </div>
+      <span
+        class="ant-select-selection-placeholder"
+      >
+        
+        <div
+          data-v-37a1b7d7=""
+          style="display: flex; align-items: center; line-height: 12px; gap: 8px;"
+        >
+          <span
+            aria-label="user"
+            class="anticon anticon-user"
+            data-v-37a1b7d7=""
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="user"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+              />
+            </svg>
+            <!---->
+          </span>
+           未选择用户
+        </div>
+        
+      </span>
+      
+    </div>
+    <!---->
+    
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`with provider 1`] = `
+<div>
+  
+  <div
+    style="margin-bottom: 8px;"
+  >
+     已选择用户: 
+    <b>
+      []
+    </b>
+  </div>
+  <div
+    class="ant-select css-dev-only-do-not-override-16pw25h wiki-user-caseder ant-select-multiple ant-select-allow-clear ant-select-show-search"
+    data-v-37a1b7d7=""
+    style="flex: 1; min-width: 250px;"
+  >
+    <!---->
+    
+    <div
+      class="ant-select-selector"
+    >
+      
+      <div
+        class="ant-select-selection-overflow"
+      >
+        
+        
+        <!---->
+        <div
+          class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+          style="opacity: 1;"
+        >
+          
+          <div
+            class="ant-select-selection-search"
+            style="width: 0px;"
+          >
+            <input
+              aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+              aria-autocomplete="list"
+              aria-controls="rc_select_TEST_OR_SSR_list"
+              aria-haspopup="listbox"
+              aria-owns="rc_select_TEST_OR_SSR_list"
+              autocomplete="off"
+              class="ant-select-selection-search-input"
+              id="rc_select_TEST_OR_SSR"
+              lazy="true"
+              readonly=""
+              role="combobox"
+              style="opacity: 0;"
+              type="search"
+              unselectable="on"
+              value=""
+            />
+            <span
+              aria-hidden="true"
+              class="ant-select-selection-search-mirror"
+            >
+              
+               
+            </span>
+          </div>
+          
+        </div>
+        <!---->
+      </div>
+      <span
+        class="ant-select-selection-placeholder"
+      >
+        
+        <div
+          data-v-37a1b7d7=""
+          style="display: flex; align-items: center; line-height: 12px; gap: 8px;"
+        >
+          <span
+            aria-label="user"
+            class="anticon anticon-user"
+            data-v-37a1b7d7=""
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="user"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+              />
+            </svg>
+            <!---->
+          </span>
+           未选择用户
+        </div>
+        
+      </span>
+      
+    </div>
+    <!---->
+    
+    <!---->
+    <!---->
+  </div>
+  
+</div>
+`;

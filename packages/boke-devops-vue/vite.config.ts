@@ -73,7 +73,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${resolve('src/style/variables.less')}";`,
+          hack: `true; @import (reference) "${resolve('src/style.global.less')}";`,
         },
         math: "strict",
         javascriptEnabled: true,
