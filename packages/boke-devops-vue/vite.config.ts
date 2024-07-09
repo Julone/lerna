@@ -7,7 +7,14 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import { visualizer } from 'rollup-plugin-visualizer';
 import vueTest from '@vitejs/plugin-vue';
 import vueJsxTest from '@vitejs/plugin-vue-jsx';
+import pkg from './package.json';
 const isCustomElement = (tag) => tag.startsWith('td-') || tag.startsWith('tdesign-theme');
+const banner = `/**
+ * @devops/boke-devops-vue v${pkg.version}
+ * (c) ${new Date().getFullYear()} ${pkg.author}
+ * @license ${pkg.license}
+ */
+`;
 // https://vitejs.dev/config/
 export default defineConfig({
   build:
@@ -16,12 +23,15 @@ export default defineConfig({
           lib: {
             entry: resolve(__dirname, "src/index.ts"),
             name: "index",
-            formats: ["es", "umd"],
+            formats: ["es", "umd", "cjs"],
             fileName: (format) => `index.${format}.js`,
           },
           rollupOptions: {
             external: ["vue", "lodash"],
             output: {
+              name: "BokeDevopsVue",
+              banner: banner,
+              sourcemap: true,
               globals: {
                 vue: "Vue",
                 lodash: "Lodash",
@@ -32,7 +42,6 @@ export default defineConfig({
         }
       : {
           rollupOptions: {
-            external: ["omi"],
             input: {
               index: resolve(__dirname, "index.html"),
             },
