@@ -2,8 +2,8 @@
     <slot name="default"></slot>
 </template>
 <script setup lang="tsx">
-
-import { globalConfig, mergeConfig } from "../store"
+import {provide} from "vue"
+import {  mergeConfig } from "./store
 const props = defineProps({
   "globalConfig": {
     type: Object,
@@ -15,5 +15,7 @@ const props = defineProps({
   }
 })
 
-mergeConfig(props)
+const {gc, gs} = mergeConfig(props)
+provide("globalConfig", gc)
+provide("globalState", gs)
 </script>

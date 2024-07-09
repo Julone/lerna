@@ -1,21 +1,18 @@
-import { computed, toRef,  getCurrentInstance } from "vue"
-import { globalConfig, globalState } from "./../store"
-import { merge } from "lodash-es"
-
-export const NAME_KEY = computed(() => globalConfig.avatar.user_name)
-export const AVATAR_KEY = computed(() => globalConfig.avatar.user_avatar)
-export const DEPT_KEY = computed(() => globalConfig.avatar.dept_name)
-export const USERID_KEY = computed(() => globalConfig.avatar.user_id)
+import { computed, toRef,  getCurrentInstance, inject } from "vue"
+import { globalConfig, globalState } from "../Provider/store"
+import { mergeWith } from "lodash-es"
 
 export const useCustomProps = () => {
     const props = getCurrentInstance()?.attrs as any;
-    const mergedProps = merge(globalConfig.avatar, props?.customProps || {});
+    const injectGlobalConfig = inject("globalConfig") as any
+    const injectGlobalState = inject("globalState") as any
+    const mergedProps = mergeWith({}, globalConfig.avatar, injectGlobalConfig?.avatar, props?.customProps || {});
 
     let NAME_KEY = toRef(mergedProps, 'user_name')
     let AVATAR_KEY = toRef(mergedProps, 'user_avatar')
     let DEPT_KEY = toRef(mergedProps, 'dept_name')
     let USERID_KEY = toRef(mergedProps, 'user_id')
-    const global_always_avatar_is_hihglight = globalState.global_always_avatar_is_hihglight
+    const global_always_avatar_is_hihglight = injectGlobalState?.global_always_avatar_is_hihglight || globalState?.global_always_avatar_is_hihglight
     return {
         NAME_KEY,
         AVATAR_KEY,
