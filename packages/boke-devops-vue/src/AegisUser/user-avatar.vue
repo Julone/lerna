@@ -11,7 +11,6 @@
       <div class="left-icon" ref="targetRef" @mouseenter="onShowPopover()" @mousemove="onShowPopover()"
         @mouseleave="onClosePopover()">
         <AAvatar v-if="!props.onlyName" :src="user_icon" :class="'avator-icon'" :size="props.size">
-          <img :src="defaultUserPng" alt="" />
         </AAvatar>
         <span v-else>
           <span v-if="props.linkType == 'text'">
@@ -36,7 +35,7 @@
         </span>
       </div>
       <div v-if="props.suffix">{{ props.suffix }}</div>
-      <AButton size="small" v-if="props.closable" @click="emits('close')" :color="props.color" type="text"
+      <AButton size="small" v-if="props.closable" @click.stop.prevent="onClose" :color="props.color" type="text"
         shape="circle" style="margin-left: 3px; transform: translateY(0) scale(0.6); opacity: 0.8">
         <template #icon>
           <CloseOutlined />
@@ -47,7 +46,7 @@
   </div>
 </template>
 
-<script lang="tsx">
+<script lang="jsx">
 import { defineComponent } from "vue"
 import {
   ref,
@@ -57,6 +56,7 @@ import {
 import { Avatar as AAvatar, Button as AButton, Tag as ATag } from "ant-design-vue/es"
 import { useCustomProps } from "./store"
 import { isFunction } from "lodash-es"
+import {CloseOutlined} from "@ant-design/icons-vue"
 
 export default defineComponent({
   inheritAttrs: false,
@@ -64,7 +64,8 @@ export default defineComponent({
   components: {
     'AAvatar': AAvatar,
     "AButton": AButton,
-    "ATag": ATag
+    "ATag": ATag,
+    CloseOutlined
   },
   props: {
     size: {
@@ -148,11 +149,11 @@ export default defineComponent({
       default: () => false
     }
   },
-  setup(props, { attrs }) {
+  emits: ['close'],
+  setup(props, { attrs, emit }) {
     const { NAME_KEY, AVATAR_KEY, DEPT_KEY, USERID_KEY, global_always_avatar_is_hihglight } = useCustomProps()
     const appVersion = "1.0.0";
-    const emits = defineEmits(["close"]);
-
+    console.log(emit,"emits")
     const targetRef = ref();
     const onShowPopover = () => { };
     const showViewer = ref(false);
@@ -181,6 +182,10 @@ export default defineComponent({
       }
       return isFunction(props.is_highlight) ? props?.is_highlight(data.value) : props.is_highlight
     }
+
+    const onClose= ()=> {
+      emit("close")
+    }
     return {
       user_name,
       dept_name,
@@ -192,7 +197,9 @@ export default defineComponent({
       props,
       onShowPopover,
       onClosePopover,
-      attrs
+      attrs,
+      emit,
+      onClose
     }
   }
 })

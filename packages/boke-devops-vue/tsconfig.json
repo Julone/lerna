@@ -14,6 +14,7 @@
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": false,
     "moduleResolution": "node",
+    "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
       "skipLibCheck": true,
     "experimentalDecorators": true,

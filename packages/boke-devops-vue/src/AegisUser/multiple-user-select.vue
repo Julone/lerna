@@ -53,13 +53,13 @@
             pointer-events: none;
           "
         >
-          <div class="user-label">
+          <div class="user-select-user-label">
             <a-avatar
               :src="item?.data?.[AVATAR_KEY]"
-              :class="'avator-icon'"
+              :class="'user-select-avatar-icon'"
               :size="18"
             >
-              <img :src="defaultUserPng" alt="" />
+              <div style="display: flex;width: 18px;height: 18px"></div>
             </a-avatar>
             <span>
               {{ item.data?.[NAME_KEY] }}
@@ -87,12 +87,10 @@ import {
 import {find as _find} from "lodash-es";
 import { Select as ASelect, Avatar as AAvatar} from "ant-design-vue/es";
 import userAvatar from "./user-avatar.vue";
-import defaultUserPng from "./default-user.png";
 import { UserOutlined } from "@ant-design/icons-vue";
 
 import {useCustomProps} from "./store"
 import { onErrorCaptured } from "vue";
-
 
 const props = defineProps([
   "modelValue",
@@ -104,7 +102,6 @@ const props = defineProps([
   "placeholder",
   "maxTagCount",
 ]);
-
 
 const  {NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY } =useCustomProps()
 
@@ -128,7 +125,7 @@ const options = computed(() => {
     });
 });
 const onNodeClick = (e) => {
-  const target = _find(projUserTreeOptions.value, (item) => item.value == e);
+  const target = _find(projUserTreeOptions.value, (item: any) => item.value == e);
   emits("change", target);
   emits("update:modelValue", e);
   nextTick(() => {
@@ -179,14 +176,14 @@ onErrorCaptured(()=> {
   }
 }
 
-.user-label {
+.user-select-user-label {
   font-size: 12px;
   white-space: nowrap;
   display: flex;
   max-width: 80px;
   margin-left: 4px;
   gap: 12px;
-  /deep/ .avatar-icon {
+  /deep/ .user-select-avatar-icon {
     flex: none;
   }
 }

@@ -21,7 +21,7 @@
   </a-popover>
 </template>
 
-<script setup lang="tsx">
+<script setup lang="jsx">
 import { useAttrs } from "vue"
 import RmpUserAvatar from './user-avatar.vue';
 import { Popover as APopover, AvatarGroup as AAvatarGroup, Avatar as AAvatar, TypographyText as ATypographyText} from "ant-design-vue"
@@ -62,7 +62,7 @@ const props = defineProps({
 
 const attrs =  useAttrs ()
 const { AVATAR_KEY, global_always_avatar_is_hihglight, NAME_KEY, DEPT_KEY } = useCustomProps()
-const isH = (item: any) => {
+const isH = (item) => {
   if(global_always_avatar_is_hihglight) {
     return isFunction(global_always_avatar_is_hihglight)? global_always_avatar_is_hihglight(item): global_always_avatar_is_hihglight
   }

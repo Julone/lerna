@@ -10,6 +10,7 @@ declare module '*.vue' {
   export default component;
 }
 
+
 //以下是jsx - ts 类型申明
 declare global {
   namespace JSX {

@@ -1,8 +1,15 @@
 <template>
-    <BokeUserAvatar
-        tag
-        :data="data"
-    ></BokeUserAvatar>
+<div>
+  <BokeUserAvatar
+      tag
+      :data="data"
+  ></BokeUserAvatar>
+  <BokeUserAvatar
+      tag
+      :data="{}"
+  ></BokeUserAvatar>
+</div>
+
 </template>
 
 <script setup>
