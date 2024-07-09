@@ -9,7 +9,7 @@
     "dev": "cd packages/boke-docs && npm run dev",
     "build": "cd packages/boke-devops-vue && npm run build",
     "release": "pnpm run sa release",
-    "publish": "cd packages/boke-devops-vue && pnpm publish -r",
+    "publish": "cd packages/boke-devops-vue && pnpm publish --registry=https://nexus3.pocketcity.com/repository/boke-npm-private/",
     "test": "vitest --ui",
     "test:snap": "vitest --ui -u"
   },
