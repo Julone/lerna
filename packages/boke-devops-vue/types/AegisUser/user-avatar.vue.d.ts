@@ -104,13 +104,16 @@ declare const _default: import("vue").DefineComponent<{
         readonly tag: boolean;
         readonly suffix: string;
         readonly is_highlight: Function;
+        readonly onClose?: ((...args: any[]) => any) | undefined;
     } & {}>;
     onShowPopover: () => void;
     onClosePopover: () => void;
     attrs: {
         [x: string]: unknown;
     };
-}, any, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+    emit: (event: "close", ...args: any[]) => void;
+    onClose: () => void;
+}, any, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], "close", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     size: {
         type: (StringConstructor | NumberConstructor)[];
         required: false;
@@ -191,7 +194,9 @@ declare const _default: import("vue").DefineComponent<{
         required: false;
         default: () => boolean;
     };
-}>>, {
+}>> & {
+    onClose?: ((...args: any[]) => any) | undefined;
+}, {
     size: string | number;
     shape: string;
     disabled: boolean;

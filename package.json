@@ -1,14 +1,14 @@
 {
   "name": "boke-devops",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "sa": "node ./scripts/index.mjs",
-    "release": "pnpm run build && pnpm run sa release",
     "dev": "cd packages/boke-docs && npm run dev",
     "build": "cd packages/boke-devops-vue && npm run build",
+    "release": "pnpm run sa release",
     "publish": "cd packages/boke-devops-vue && npm publish",
     "test": "vitest --ui",
     "test:snap": "vitest --ui -u"
@@ -20,7 +20,10 @@
     "@vitest/ui": "1.6.0",
     "@vue/test-utils": "^2.4.6",
     "bumpp": "^9.4.1",
+    "c12": "^1.11.1",
+    "cac": "^6.7.14",
     "jsdom": "^24.1.0",
+    "kolorist": "^1.8.0",
     "lerna": "^8.1.5",
     "less": "^4.2.0",
     "typescript": "^5.5.2",

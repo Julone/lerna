@@ -3,9 +3,9 @@ declare const _default: {
         $props: {
             readonly size?: string | undefined;
             readonly data?: unknown[] | undefined;
+            readonly placeholder?: string | undefined;
             readonly tag?: boolean | undefined;
             readonly is_highlight?: Function | undefined;
-            readonly placeholder?: string | undefined;
             readonly showText?: boolean | undefined;
             readonly max?: number | undefined;
         };
@@ -20,9 +20,9 @@ declare const _default: {
         $props: {
             readonly size?: string | undefined;
             readonly data?: unknown[] | undefined;
+            readonly placeholder?: string | undefined;
             readonly tag?: boolean | undefined;
             readonly is_highlight?: Function | undefined;
-            readonly placeholder?: string | undefined;
             readonly showText?: boolean | undefined;
             readonly max?: number | undefined;
         };
@@ -34,9 +34,9 @@ declare const _default: {
     $props: {
         readonly size?: string | undefined;
         readonly data?: unknown[] | undefined;
+        readonly placeholder?: string | undefined;
         readonly tag?: boolean | undefined;
         readonly is_highlight?: Function | undefined;
-        readonly placeholder?: string | undefined;
         readonly showText?: boolean | undefined;
         readonly max?: number | undefined;
     };
