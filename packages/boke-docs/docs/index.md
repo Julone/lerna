@@ -21,14 +21,6 @@ yarn add @devops/boke-devops-vue
 ```bash [pnpm]
 pnpm add @devops/boke-devops-vue 
 ```
-
-```ts [.dumirc.ts] {3}
-import { defineConfig } from 'dumi';
-
-export default defineConfig({
-  // ...
-});
-```
 :::
 ## 使用
 
