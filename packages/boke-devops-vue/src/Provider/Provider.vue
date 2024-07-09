@@ -1,9 +1,10 @@
 <template>
-    <slot name="default"></slot>
+  <slot name="default"></slot>
 </template>
 <script setup lang="tsx">
 import {provide} from "vue"
-import {  mergeConfig } from "./store
+import {mergeConfig} from "./store"
+
 const props = defineProps({
   "globalConfig": {
     type: Object,
