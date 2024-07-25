@@ -57,6 +57,7 @@ exports[`user avatar is normal 1`] = `
       <!---->
     </span>
   </div>
+   无数据的时候 
   <div
     data-v-7871c292=""
     style="display: inline-flex;"

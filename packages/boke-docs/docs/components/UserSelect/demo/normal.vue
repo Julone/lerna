@@ -8,8 +8,22 @@
       v-model="user"
       style="min-width: 250px"
       :customProps="{user_name: 'name', 'user_avatar': 'avatar'}"
+      :tagRenderProps="{size: 28, noID: false}"
   ></BokeUserSelect>
+  <div style="margin-bottom: 8px">
+    自定义tagRender: <b>{{user}}</b>
+  </div>
+  <BokeUserSelect
+      :options="options"
+      v-model="user"
+      style="min-width: 250px"
+      :customProps="{user_name: 'name', 'user_avatar': 'avatar'}"
+  >
+    <template #tagRender="{label}">
+      <span style="color: red">{{ label }}</span>
+    </template>
 
+  </BokeUserSelect>
 </div>
 
 </template>

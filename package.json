@@ -8,10 +8,11 @@
     "sa": "node ./scripts/index.mjs",
     "dev": "cd packages/boke-docs && npm run dev",
     "build": "cd packages/boke-devops-vue && npm run build",
+    "build:doc": "cd packages/boke-docs && npm run build",
     "release": "pnpm run sa release",
     "publish": "cd packages/boke-devops-vue && pnpm publish --registry=https://nexus3.pocketcity.com/repository/boke-npm-private/",
-    "test": "vitest --ui",
-    "test:snap": "vitest --ui -u"
+    "test": "vitest",
+    "test:snap": "vitest -u"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.4",

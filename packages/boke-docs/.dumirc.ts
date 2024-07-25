@@ -43,7 +43,9 @@ export default ({
       { title: '组件', link: '/components' },
       { title: '3rd party framework', link: '/framework-test' },
     ],
-    name: "boke-devops"
+    name: "BOKE\rDEVOPS",
+    logo: "/logo.png",
+    footer: "Powered by ❤️"
   },
   chainWebpack(memo: any) {
 

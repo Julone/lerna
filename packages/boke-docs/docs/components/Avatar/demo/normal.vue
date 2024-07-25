@@ -4,6 +4,7 @@
       tag
       :data="data"
   ></BokeUserAvatar>
+  无数据的时候
   <BokeUserAvatar
       tag
       :data="{}"

@@ -19,7 +19,8 @@
     v-bind="$attrs"
   >
     <template #tagRender="{ label, closable, onClose, option }">
-      <BokeUserAvatar
+      <slot name="tagRender" v-bind="{label, closable, onClose, option}">
+        <BokeUserAvatar
         v-if="option?.data"
         :data="option?.data"
         :size="18"
@@ -31,8 +32,10 @@
         :closable="closable"
         @close="onClose"
         :customProps="$attrs.customProps"
+        v-bind="props.tagRenderProps"
       >
       </BokeUserAvatar>
+      </slot>
     </template>
     <template #placeholder>
       <div
@@ -96,23 +99,20 @@ const props = defineProps([
   "modelValue",
   "options",
   "disabled",
-  "userSource",
   "optionDisabledProp",
   "hideValues",
   "placeholder",
   "maxTagCount",
+  "tagRenderProps"
 ]);
 
 const  {NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY } =useCustomProps()
 
 const emits = defineEmits(["update:modelValue", "blur", "focus", "change"]);
-// userSelectOptionsAll
-const projUserTreeOptions = computed(
-  () => null
-);
+
 const innerdata = ref(null);
 const options = computed(() => {
-  const target = props.options || projUserTreeOptions.value;
+  const target = props.options ;
   return target
     ?.map((item) => {
       item.disabled = props.optionDisabledProp
@@ -125,7 +125,7 @@ const options = computed(() => {
     });
 });
 const onNodeClick = (e) => {
-  const target = _find(projUserTreeOptions.value, (item: any) => item.value == e);
+  const target = _find(options.value, (item: any) => item.value == e);
   emits("change", target);
   emits("update:modelValue", e);
   nextTick(() => {
@@ -143,13 +143,7 @@ const onFilterOption = (inputValue, option) => {
   return option.label.toLowerCase().includes(inputValue.toLowerCase());
 };
 
-watch(
-  props.userSource,
-  (val) => {
-    innerdata.value = props.modelValue;
-  },
-  { immediate: true }
-);
+
 onUpdated(() => {
   innerdata.value = props.modelValue;
 });

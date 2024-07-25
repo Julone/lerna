@@ -3,3 +3,4 @@ vite-analysis-build-chart.html
 **/*.html
 packages/boke-docs/.dumi/**/*
 .idea/**/*
+packages/boke-docs/dist/**/*
