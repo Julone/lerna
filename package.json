@@ -1,6 +1,6 @@
 {
   "name": "boke-devops",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "workspaces": [
     "packages/*"
   ],
@@ -36,7 +36,7 @@
     "@dumijs/preset-vue": "^2.3.0",
     "unplugin-vue-macros": "^2.9.5",
     "vue": "^3.4.31",
-    "@devops/boke-devops-vue": "workspace:*"  
+    "@devops/boke-devops-vue": "workspace:*"
   },
   "repository": {
     "type": "git",
