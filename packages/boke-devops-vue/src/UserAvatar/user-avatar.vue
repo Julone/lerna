@@ -153,7 +153,6 @@ export default defineComponent({
   setup(props, { attrs, emit }) {
     const { NAME_KEY, AVATAR_KEY, DEPT_KEY, USERID_KEY, global_always_avatar_is_hihglight } = useCustomProps()
     const appVersion = "1.0.0";
-    console.log(emit,"emits")
     const targetRef = ref();
     const onShowPopover = () => { };
     const showViewer = ref(false);

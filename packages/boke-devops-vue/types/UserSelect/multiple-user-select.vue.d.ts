@@ -4,10 +4,10 @@ declare const _default: {
         placeholder?: any;
         modelValue?: any;
         options?: any;
-        userSource?: any;
         optionDisabledProp?: any;
         hideValues?: any;
         maxTagCount?: any;
+        tagRenderProps?: any;
     }>>> & {
         onFocus?: ((...args: any[]) => any) | undefined;
         onBlur?: ((...args: any[]) => any) | undefined;
@@ -18,10 +18,10 @@ declare const _default: {
         placeholder?: any;
         modelValue?: any;
         options?: any;
-        userSource?: any;
         optionDisabledProp?: any;
         hideValues?: any;
         maxTagCount?: any;
+        tagRenderProps?: any;
     }>>> & {
         onFocus?: ((...args: any[]) => any) | undefined;
         onBlur?: ((...args: any[]) => any) | undefined;
@@ -32,10 +32,10 @@ declare const _default: {
         readonly placeholder?: any;
         readonly modelValue?: any;
         readonly options?: any;
-        readonly userSource?: any;
         readonly optionDisabledProp?: any;
         readonly hideValues?: any;
         readonly maxTagCount?: any;
+        readonly tagRenderProps?: any;
     }, true, {}, {}, {
         P: {};
         B: {};
@@ -48,10 +48,10 @@ declare const _default: {
         placeholder?: any;
         modelValue?: any;
         options?: any;
-        userSource?: any;
         optionDisabledProp?: any;
         hideValues?: any;
         maxTagCount?: any;
+        tagRenderProps?: any;
     }>>> & {
         onFocus?: ((...args: any[]) => any) | undefined;
         onBlur?: ((...args: any[]) => any) | undefined;
@@ -62,10 +62,10 @@ declare const _default: {
         readonly placeholder?: any;
         readonly modelValue?: any;
         readonly options?: any;
-        readonly userSource?: any;
         readonly optionDisabledProp?: any;
         readonly hideValues?: any;
         readonly maxTagCount?: any;
+        readonly tagRenderProps?: any;
     }>;
     __isFragment?: undefined;
     __isTeleport?: undefined;
@@ -75,10 +75,10 @@ declare const _default: {
     placeholder?: any;
     modelValue?: any;
     options?: any;
-    userSource?: any;
     optionDisabledProp?: any;
     hideValues?: any;
     maxTagCount?: any;
+    tagRenderProps?: any;
 }>>> & {
     onFocus?: ((...args: any[]) => any) | undefined;
     onBlur?: ((...args: any[]) => any) | undefined;
@@ -89,9 +89,18 @@ declare const _default: {
     readonly placeholder?: any;
     readonly modelValue?: any;
     readonly options?: any;
-    readonly userSource?: any;
     readonly optionDisabledProp?: any;
     readonly hideValues?: any;
     readonly maxTagCount?: any;
-}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps;
+    readonly tagRenderProps?: any;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        tagRender: (_: {
+            label: any;
+            closable: any;
+            onClose: any;
+            option: any;
+        }) => any;
+    };
+});
 export default _default;
