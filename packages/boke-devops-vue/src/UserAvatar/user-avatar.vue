@@ -1,5 +1,5 @@
 <template>
-  <div style="display:inline-flex">
+  <div style="display:inline-flex" ref="avatarRef" >
     <ATag class="boke-useravator-wrapper" :class="{
       'wrapper-only-name': props.onlyName,
       is_tag: props.tag && !props.color,
@@ -9,14 +9,14 @@
     }" v-bind="attrs" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }" v-if="data"
       :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
       <div class="left-icon" ref="targetRef" >
-        <a-popover placement="bottomLeft" v-if="!props.onlyName"
+        <a-popover placement="bottomLeft" v-if="!props.onlyName" :getPopupContainer="getPopupContainer"
           :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'">
           <template #content>
             <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }"></userAvatarCard>
           </template>
           <template #title>
           </template>
-          <AAvatar :src="user_icon" :class="'avator-icon'" :size="props.size"></AAvatar>
+          <AAvatar :src="user_icon" :class="'avator-icon'"  :size="props.size"></AAvatar>
         </a-popover>
         <span v-else>
           <span v-if="props.linkType == 'text'">
@@ -188,6 +188,11 @@ export default defineComponent({
     const onClose = () => {
       emit("close")
     }
+    const avatarRef =ref()
+    const getPopupContainer= ()=> {
+      console.log(avatarRef.value, "targetRef.value")
+      return avatarRef.value
+    }
     return {
       user_name,
       dept_name,
@@ -200,7 +205,10 @@ export default defineComponent({
       attrs,
       emit,
       onClose,
-      global_disabled_avatar_card
+      global_disabled_avatar_card,
+      getPopupContainer,
+      targetRef,
+      avatarRef
     }
   }
 })

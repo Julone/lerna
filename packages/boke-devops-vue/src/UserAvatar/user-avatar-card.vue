@@ -5,7 +5,7 @@
       style="display: flex; gap: 16px; flex-direction: row; align-items: center"
     >
       <div style="z-index: 2">
-        <img :src="userinfo.user_icon" style="width: 65px; height: 65px;border-radius: 500px" />
+        <img :src="userinfo.user_icon" style="width: 70px; height: 70px;border-radius: 500px" />
       </div>
       <div style="z-index: 2">
         <p
@@ -13,10 +13,10 @@
           style="margin: 0 0 6px 0; font-weight: 500"
         >
           <a-space :size="12" :spacer="spacer" :wrap="false">
-            <span>{{ userinfo.user_name }}</span>
-            <span>{{ userinfo.dept_name }}</span>
-            <span v-if="userinfo.dept_name != extraInfo?.min_fs_department_name && extraInfo?.min_fs_department_name">{{ extraInfo?.min_fs_department_name }}</span>
-            <span v-if="extraInfo" :style="extraInfo?.is_active == false ? { color: 'red' } : { color: '#666'}">
+            <span style="font-weight:bold">{{ userinfo.user_name }}</span>
+            <span class="dept_class">{{ userinfo.dept_name }}</span>
+            <span class="dept_class" v-if="userinfo.dept_name != extraInfo?.min_fs_department_name && extraInfo?.min_fs_department_name">{{ extraInfo?.min_fs_department_name }}</span>
+            <span class="dept_class"  v-if="extraInfo" :style="extraInfo?.is_active == false ? { color: 'red' } : { color: '#666'}">
               {{ extraInfo?.is_active == false ? '已离职' : '在职' }}
             </span>
           </a-space>
@@ -74,7 +74,7 @@
           'background-image': `url('https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/lark/open/app_store/images/banner-2c2539b4.png')`,
           opacity: 0.4,
           'background-size': 'cover',
-          'background-position-y': '-50px',
+          'background-position-y': '-20px',
         }"
       ></div>
     </div>
@@ -89,6 +89,10 @@
         width: 100%;
         cursor: zoom-in;
       }
+    }
+    :deep(.dept_class){
+      color: #333;
+      font-size: 12px;
     }
 
     .mps-user-avator-rich-conent_after {
