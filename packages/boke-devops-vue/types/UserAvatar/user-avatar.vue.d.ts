@@ -19,6 +19,11 @@ declare const _default: import("vue").DefineComponent<{
         required: false;
         default: boolean;
     };
+    noID: {
+        type: BooleanConstructor;
+        required: false;
+        default: boolean;
+    };
     linkType: {
         type: null;
         required: false;
@@ -34,17 +39,7 @@ declare const _default: import("vue").DefineComponent<{
         required: false;
         default: string;
     };
-    insidePopover: {
-        type: BooleanConstructor;
-        required: false;
-        default: boolean;
-    };
-    noID: {
-        type: BooleanConstructor;
-        required: false;
-        default: boolean;
-    };
-    noDialogDetail: {
+    disabledPopover: {
         type: BooleanConstructor;
         required: false;
         default: boolean;
@@ -90,17 +85,16 @@ declare const _default: import("vue").DefineComponent<{
     props: import(".pnpm/@vue+shared@3.4.31/node_modules/@vue/shared").LooseRequired<{
         readonly size: string | number;
         readonly data: any;
-        readonly shape: string;
-        readonly disabled: boolean;
         readonly color: string;
         readonly closable: boolean;
+        readonly shape: string;
+        readonly disabled: boolean;
         readonly hidePopover: boolean;
         readonly onlyIcon: boolean;
         readonly onlyName: boolean;
-        readonly linkType: any;
-        readonly insidePopover: boolean;
         readonly noID: boolean;
-        readonly noDialogDetail: boolean;
+        readonly linkType: any;
+        readonly disabledPopover: boolean;
         readonly tag: boolean;
         readonly suffix: string;
         readonly is_highlight: Function;
@@ -113,6 +107,7 @@ declare const _default: import("vue").DefineComponent<{
     };
     emit: (event: "close", ...args: any[]) => void;
     onClose: () => void;
+    global_disabled_avatar_card: boolean;
 }, any, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], "close", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     size: {
         type: (StringConstructor | NumberConstructor)[];
@@ -134,6 +129,11 @@ declare const _default: import("vue").DefineComponent<{
         required: false;
         default: boolean;
     };
+    noID: {
+        type: BooleanConstructor;
+        required: false;
+        default: boolean;
+    };
     linkType: {
         type: null;
         required: false;
@@ -149,17 +149,7 @@ declare const _default: import("vue").DefineComponent<{
         required: false;
         default: string;
     };
-    insidePopover: {
-        type: BooleanConstructor;
-        required: false;
-        default: boolean;
-    };
-    noID: {
-        type: BooleanConstructor;
-        required: false;
-        default: boolean;
-    };
-    noDialogDetail: {
+    disabledPopover: {
         type: BooleanConstructor;
         required: false;
         default: boolean;
@@ -199,17 +189,16 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     size: string | number;
     data: any;
-    shape: string;
-    disabled: boolean;
     color: string;
     closable: boolean;
+    shape: string;
+    disabled: boolean;
     hidePopover: boolean;
     onlyIcon: boolean;
     onlyName: boolean;
-    linkType: any;
-    insidePopover: boolean;
     noID: boolean;
-    noDialogDetail: boolean;
+    linkType: any;
+    disabledPopover: boolean;
     tag: boolean;
     suffix: string;
     is_highlight: Function;
