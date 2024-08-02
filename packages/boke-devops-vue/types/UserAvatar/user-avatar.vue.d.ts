@@ -100,8 +100,6 @@ declare const _default: import("vue").DefineComponent<{
         readonly is_highlight: Function;
         readonly onClose?: ((...args: any[]) => any) | undefined;
     } & {}>;
-    onShowPopover: () => void;
-    onClosePopover: () => void;
     attrs: {
         [x: string]: unknown;
     };
