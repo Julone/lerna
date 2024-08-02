@@ -3,7 +3,7 @@
   <rmp-user-avatar v-else-if="data.length == 1" :data="data[0]" :key="data[0]?.[AVATAR_KEY]" :size="size" :hide-popover="false"
     :show-text="props.showText" :is_highlight="() => props.is_highlight(data[0])"  :tag="props.tag"></rmp-user-avatar>
   <a-popover v-else show-arrow placement="bottom" destroy-on-close>
-    <div>
+    <div style="display: inline-flex；">
       <a-avatar-group>
         <template v-for="(el, index) in data">
           <a-avatar :src="el?.[AVATAR_KEY]" :key="el?.[AVATAR_KEY]" v-if="index < props.max"  :size="$props.size" :class="{ is_highlight: isH(el) }"></a-avatar>

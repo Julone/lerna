@@ -10,8 +10,15 @@
       :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
       <div class="left-icon" ref="targetRef" @mouseenter="onShowPopover()" @mousemove="onShowPopover()"
         @mouseleave="onClosePopover()">
-        <AAvatar v-if="!props.onlyName" :src="user_icon" :class="'avator-icon'" :size="props.size">
-        </AAvatar>
+        <a-popover placement="bottomLeft" v-if="!props.onlyName"
+          :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'">
+          <template #content>
+            <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }"></userAvatarCard>
+          </template>
+          <template #title>
+          </template>
+          <AAvatar :src="user_icon" :class="'avator-icon'" :size="props.size"></AAvatar>
+        </a-popover>
         <span v-else>
           <span v-if="props.linkType == 'text'">
             {{ user_name }}
@@ -25,10 +32,10 @@
       <div class="label" v-if="!props.onlyIcon && !props.onlyName">
         <span class="realname">
           {{
-      isLoading
-        ? "加载中..."
-        : user_name
-    }}
+            isLoading
+              ? "加载中..."
+              : user_name
+          }}
         </span>
         <span class="id" v-if="!props.noID">
           <span>{{ dept_name }}</span>
@@ -53,10 +60,11 @@ import {
   defineEmits,
   computed,
 } from "vue";
-import { Avatar as AAvatar, Button as AButton, Tag as ATag } from "ant-design-vue/es"
+import { Avatar as AAvatar, Button as AButton, Tag as ATag, Popover as APopover, BadgeRibbon as ABadgeRibbon } from "ant-design-vue/es"
 import { useCustomProps } from "./avatar.store"
 import { isFunction } from "lodash-es"
-import {CloseOutlined} from "@ant-design/icons-vue"
+import { CloseOutlined } from "@ant-design/icons-vue"
+import userAvatarCard from "./user-avatar-card.vue";
 
 export default defineComponent({
   inheritAttrs: false,
@@ -65,7 +73,10 @@ export default defineComponent({
     'AAvatar': AAvatar,
     "AButton": AButton,
     "ATag": ATag,
-    CloseOutlined
+    CloseOutlined,
+    APopover,
+    userAvatarCard,
+    'ABadgeRibbon': ABadgeRibbon
   },
   props: {
     size: {
@@ -88,6 +99,11 @@ export default defineComponent({
       required: false,
       default: false
     },
+    noID: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     linkType: {
       type: null,
       required: false,
@@ -103,17 +119,7 @@ export default defineComponent({
       required: false,
       default: "circle"
     },
-    insidePopover: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    noID: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    noDialogDetail: {
+    disabledPopover: {
       type: Boolean,
       required: false,
       default: false
@@ -151,7 +157,7 @@ export default defineComponent({
   },
   emits: ['close'],
   setup(props, { attrs, emit }) {
-    const { NAME_KEY, AVATAR_KEY, DEPT_KEY, USERID_KEY, global_always_avatar_is_hihglight } = useCustomProps()
+    const { NAME_KEY, AVATAR_KEY, DEPT_KEY, USERID_KEY, global_always_avatar_is_hihglight, global_disabled_avatar_card } = useCustomProps()
     const appVersion = "1.0.0";
     const targetRef = ref();
     const onShowPopover = () => { };
@@ -182,7 +188,7 @@ export default defineComponent({
       return isFunction(props.is_highlight) ? props?.is_highlight(data.value) : props.is_highlight
     }
 
-    const onClose= ()=> {
+    const onClose = () => {
       emit("close")
     }
     return {
@@ -198,7 +204,8 @@ export default defineComponent({
       onClosePopover,
       attrs,
       emit,
-      onClose
+      onClose,
+      global_disabled_avatar_card
     }
   }
 })

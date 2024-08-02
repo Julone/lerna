@@ -13,11 +13,13 @@ export const useCustomProps = () => {
     let DEPT_KEY = toRef(mergedProps, 'dept_name')
     let USERID_KEY = toRef(mergedProps, 'user_id')
     const global_always_avatar_is_hihglight = injectGlobalState?.global_always_avatar_is_hihglight || globalState?.global_always_avatar_is_hihglight
+    const global_disabled_avatar_card = injectGlobalConfig?.avatarCard?.enabled == false
     return {
         NAME_KEY,
         AVATAR_KEY,
         DEPT_KEY,
         USERID_KEY,
-        global_always_avatar_is_hihglight
+        global_always_avatar_is_hihglight,
+        global_disabled_avatar_card
     }
 }

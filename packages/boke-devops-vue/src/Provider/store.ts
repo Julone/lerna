@@ -7,9 +7,12 @@ export const globalConfig = {
         dept_name: "dept_name",
         user_avatar: "avatar",
         user_id: "user_id"
+    },
+    avatarCard: {
+        "api_url": process.env.NODE_ENV == 'development'? "http://172.18.12.155:8000/api": "https://devops.pocketcity.com/api",
+        "enabled": true,
     }
 }
-
 
 export const globalState = reactive({
     global_always_avatar_is_hihglight: null, //如果设置这个, 自带的头像高亮将失效
