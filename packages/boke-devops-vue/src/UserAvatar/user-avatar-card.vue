@@ -58,6 +58,7 @@
             <a-button
                 type="primary"
               size="small"
+                :disabled="!extraInfo"
               @click="onChat(extraInfo?.fs_open_id)"
             >
               飞书联系
@@ -81,7 +82,7 @@
 </template>
 <style lang="scss" scoped>
   .mps-user-avator-rich-conent {
-    min-width: 350px;
+    min-width: 270px;
     max-width: 350px;
     :deep(.el-avatar) {
       img {

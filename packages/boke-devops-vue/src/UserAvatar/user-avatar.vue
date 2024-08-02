@@ -8,8 +8,7 @@
       'only-icon-style': props.onlyIcon
     }" v-bind="attrs" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }" v-if="data"
       :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
-      <div class="left-icon" ref="targetRef" @mouseenter="onShowPopover()" @mousemove="onShowPopover()"
-        @mouseleave="onClosePopover()">
+      <div class="left-icon" ref="targetRef" >
         <a-popover placement="bottomLeft" v-if="!props.onlyName"
           :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'">
           <template #content>
@@ -160,10 +159,8 @@ export default defineComponent({
     const { NAME_KEY, AVATAR_KEY, DEPT_KEY, USERID_KEY, global_always_avatar_is_hihglight, global_disabled_avatar_card } = useCustomProps()
     const appVersion = "1.0.0";
     const targetRef = ref();
-    const onShowPopover = () => { };
     const showViewer = ref(false);
 
-    const onClosePopover = () => { };
     const isMyself = ref(false);
 
     const user_name = computed(() => {
@@ -200,8 +197,6 @@ export default defineComponent({
       isLoading,
       isHigh,
       props,
-      onShowPopover,
-      onClosePopover,
       attrs,
       emit,
       onClose,
