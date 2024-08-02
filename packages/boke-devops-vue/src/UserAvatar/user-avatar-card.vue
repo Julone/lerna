@@ -74,7 +74,7 @@
           'background-image': `url('https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/lark/open/app_store/images/banner-2c2539b4.png')`,
           opacity: 0.4,
           'background-size': 'cover',
-          'background-position-y': '-20px',
+          'background-position-y': '-10px',
         }"
       ></div>
     </div>

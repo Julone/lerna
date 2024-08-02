@@ -1,4 +1,8 @@
 <template>
+  <a-popover placement="bottomLeft" :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'"  :overlayStyle="{zIndex: '9999'}">
+    <template #content>
+      <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }"></userAvatarCard>
+    </template>
   <div style="display:inline-flex" ref="avatarRef" >
     <ATag class="boke-useravator-wrapper" :class="{
       'wrapper-only-name': props.onlyName,
@@ -9,15 +13,7 @@
     }" v-bind="attrs" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }" v-if="data"
       :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
       <div class="left-icon" ref="targetRef" >
-        <a-popover placement="bottomLeft" v-if="!props.onlyName" :getPopupContainer="getPopupContainer"
-          :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'">
-          <template #content>
-            <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }"></userAvatarCard>
-          </template>
-          <template #title>
-          </template>
-          <AAvatar :src="user_icon" :class="'avator-icon'"  :size="props.size"></AAvatar>
-        </a-popover>
+          <AAvatar   v-if="!props.onlyName" :src="user_icon" :class="'avator-icon'"  :size="props.size"></AAvatar>
         <span v-else>
           <span v-if="props.linkType == 'text'">
             {{ user_name }}
@@ -50,6 +46,7 @@
       <slot name="default" :scoped="data"></slot>
     </ATag>
   </div>
+  </a-popover>
 </template>
 
 <script lang="jsx">
@@ -206,7 +203,6 @@ export default defineComponent({
       emit,
       onClose,
       global_disabled_avatar_card,
-      getPopupContainer,
       targetRef,
       avatarRef
     }
