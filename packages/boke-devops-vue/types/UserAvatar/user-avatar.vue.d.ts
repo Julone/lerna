@@ -106,6 +106,9 @@ declare const _default: import("vue").DefineComponent<{
     emit: (event: "close", ...args: any[]) => void;
     onClose: () => void;
     global_disabled_avatar_card: boolean;
+    getPopupContainer: () => any;
+    targetRef: import("vue").Ref<any>;
+    avatarRef: import("vue").Ref<any>;
 }, any, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], "close", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     size: {
         type: (StringConstructor | NumberConstructor)[];
