@@ -15,7 +15,7 @@
           <a-space :size="12" :spacer="spacer" :wrap="false">
             <span>{{ userinfo.user_name }}</span>
             <span>{{ userinfo.dept_name }}</span>
-            <span v-if="extraInfo?.min_fs_department_name">{{ extraInfo?.min_fs_department_name }}</span>
+            <span v-if="userinfo.dept_name != extraInfo?.min_fs_department_name && extraInfo?.min_fs_department_name">{{ extraInfo?.min_fs_department_name }}</span>
             <span v-if="extraInfo" :style="extraInfo?.is_active == false ? { color: 'red' } : { color: '#666'}">
               {{ extraInfo?.is_active == false ? '已离职' : '在职' }}
             </span>
@@ -63,8 +63,9 @@
               飞书联系
             </a-button>
           </a-space>
-          <a style="float:right; font-size: 12px; opacity: 0.8; color: #ccc; transform: translateY(4px)" href="https://devops.pocketcity.com/">数据来源: Aegis</a>
         </p>
+        <a style="position:absolute; right: 6px; bottom: 6px;float:right; font-size: 12px; opacity: 0.8; color: #ccc; transform: translateY(4px)" href="https://devops.pocketcity.com/">数据来源: Aegis</a>
+
       </div>
       <div
         class="mps-user-avator-rich-conent_after"

@@ -15,6 +15,7 @@ exports[`Link changes the state when hovered 1`] = `
       class="left-icon"
       data-v-7871c292=""
     >
+      
       <span
         class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
         data-v-7871c292=""
@@ -24,6 +25,8 @@ exports[`Link changes the state when hovered 1`] = `
           src="https://s1-imfile.fewebp"
         />
       </span>
+      <!---->
+      
     </div>
     
     

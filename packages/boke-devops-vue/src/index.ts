@@ -19,6 +19,7 @@ export {
   BokeButton,
   BokeUserAvatarGroup,
   BokeMicroAppProvider,
+  BokeSegmented
 }
 
 // VUE
