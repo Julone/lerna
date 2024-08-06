@@ -1,7 +1,9 @@
 <template>
-  <a-popover placement="bottomLeft" :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'"  :overlayStyle="{zIndex: '9999'}">
+  <a-popover placement="bottomLeft" v-model:open="popoverVisible" :arrow="false" :mouseEnterDelay="0.1" :mouseLeaveDelay="0.3"
+             transitionName="ant-zoom-big"
+             :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'"  :overlayStyle="{zIndex: '9999',}">
     <template #content>
-      <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }"></userAvatarCard>
+      <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }" @pinCard="popoverVisible = true"></userAvatarCard>
     </template>
   <div style="display:inline-flex" ref="avatarRef" >
     <ATag class="boke-useravator-wrapper" :class="{
@@ -190,6 +192,7 @@ export default defineComponent({
       console.log(avatarRef.value, "targetRef.value")
       return avatarRef.value
     }
+    const popoverVisible = ref(false)
     return {
       user_name,
       dept_name,
@@ -204,7 +207,8 @@ export default defineComponent({
       onClose,
       global_disabled_avatar_card,
       targetRef,
-      avatarRef
+      avatarRef,
+      popoverVisible
     }
   }
 })

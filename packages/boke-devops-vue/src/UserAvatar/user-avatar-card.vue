@@ -1,11 +1,10 @@
 <template>
-  <transition name="el-zoom-in-bottom">
     <div
       class="mps-user-avator-rich-conent"
-      style="display: flex; gap: 16px; flex-direction: row; align-items: center"
+      style="display: flex; gap: 16px; flex-direction: row;     align-items: flex-start;"
     >
       <div style="z-index: 2">
-        <img :src="userinfo.user_icon" style="width: 70px; height: 70px;border-radius: 500px" />
+        <img :src="userinfo.user_icon" style="width: 70px; height: 70px;border-radius: 500px;margin-top: 10px;" />
       </div>
       <div style="z-index: 2">
         <p
@@ -16,9 +15,6 @@
             <span style="font-weight:bold">{{ userinfo.user_name }}</span>
             <span class="dept_class">{{ userinfo.dept_name }}</span>
             <span class="dept_class" v-if="userinfo.dept_name != extraInfo?.min_fs_department_name && extraInfo?.min_fs_department_name">{{ extraInfo?.min_fs_department_name }}</span>
-            <span class="dept_class"  v-if="extraInfo" :style="extraInfo?.is_active == false ? { color: 'red' } : { color: '#666'}">
-              {{ extraInfo?.is_active == false ? '已离职' : '在职' }}
-            </span>
           </a-space>
         </p>
         <p
@@ -34,7 +30,7 @@
             <ATag :bordered="false" color="orange" v-for="el in extraInfogroups" :key="el.name" size="small">
               {{el.name}}
             </ATag>
-            <a-button  type="link" size="small" v-show="!seeAllRoles" @click="seeAllRoles = true" style="zoom: 0.8">关联角色({{extraInfogroupsCount}})</a-button>
+            <a-button  type="link" size="small"  @click="seeAllRoles = !seeAllRoles, $emit('pinCard')" style="zoom: 0.8">关联角色({{extraInfogroupsCount}})<CaretDownOutlined :rotate="seeAllRoles?180: 0" /></a-button>
           </a-space>
         </p>
         <p
@@ -50,7 +46,7 @@
             <MpsRoleTag v-for="(el,index) in projectslist"  :key="el" size="small">
               {{el}}
             </MpsRoleTag>
-            <a-button  type="link" size="small" v-show="!seeAllProjects" @click="seeAllProjects = true" style="zoom: 0.8">关联项目({{projectslistCount}})</a-button>
+            <a-button  type="link" size="small"  @click="seeAllProjects = !seeAllProjects, $emit('pinCard')" style="zoom: 0.8">关联项目({{projectslistCount}})<CaretDownOutlined :rotate="seeAllProjects?180: 0" /></a-button>
           </a-space>
         </p>
         <p  class="demo-rich-content__desc" style="margin:  8px 0 0">
@@ -65,7 +61,7 @@
             </a-button>
           </a-space>
         </p>
-        <a style="position:absolute; right: 6px; bottom: 6px;float:right; font-size: 12px; opacity: 0.8; color: #ccc; transform: translateY(4px)" href="https://devops.pocketcity.com/">数据来源: Aegis</a>
+        <a style="position:absolute; right: 8px; bottom: 8px;float:right; font-size: 12px; opacity: 0.8; color: #ccc; transform: translateY(0px)" href="https://devops.pocketcity.com/">数据来源: Aegis</a>
 
       </div>
       <div
@@ -74,11 +70,10 @@
           'background-image': `url('https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/lark/open/app_store/images/banner-2c2539b4.png')`,
           opacity: 0.4,
           'background-size': 'cover',
-          'background-position-y': '-10px',
+          'background-position-y': '-30px',
         }"
       ></div>
     </div>
-  </transition>
 </template>
 <style lang="scss" scoped>
   .mps-user-avator-rich-conent {
@@ -103,7 +98,7 @@
       left: 0;
       top: 0px;
       z-index: 1;
-      border-radius: 4px;
+      border-radius: 8px;
 
       background-repeat: no-repeat;
       background-size: contain;
@@ -116,9 +111,11 @@
   import {Tag as ATag ,Divider as ADivider, Space as ASpace, Button as AButton} from "ant-design-vue"
   import {hex_sha1} from "./encode";
   import {globalConfig}  from "./../Provider/store"
+  import {CaretDownOutlined} from "@ant-design/icons-vue"
   export default defineComponent({
     props: ['userinfo'],
-    components: { MpsRoleTag: ATag,  MpsGroupTag: ATag, MpsDictTag: ATag ,ASpace,AButton,ATag},
+    components: { MpsRoleTag: ATag,  MpsGroupTag: ATag, MpsDictTag: ATag ,ASpace,AButton,ATag,CaretDownOutlined},
+    emit: ['pinCard'],
     data() {
       return {
         showViewer: false,
@@ -159,7 +156,7 @@
     },
     methods: {
       onChat(account) {
-        window.open(`https://applink.feishu.cn/client/chat/open?openId=${account}`)
+        window.open(`feishu://applink.feishu.cn/client/chat/open?openId=${account}`)
       },
     },
     mounted() {
