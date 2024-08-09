@@ -48,7 +48,6 @@ export default ({
     footer: "Powered by ❤️"
   },
   chainWebpack(memo: any) {
-
     // memo.resolve.symlinks(false)
     memo.plugin('unplugin-element-plus').use(
       require('unplugin-element-plus/webpack')({

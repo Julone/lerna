@@ -112,6 +112,7 @@
   import {hex_sha1} from "./encode";
   import {globalConfig}  from "./../Provider/store"
   import {CaretDownOutlined} from "@ant-design/icons-vue"
+  import {useCustomProps} from "./avatar.store"
   export default defineComponent({
     props: ['userinfo'],
     components: { MpsRoleTag: ATag,  MpsGroupTag: ATag, MpsDictTag: ATag ,ASpace,AButton,ATag,CaretDownOutlined},
@@ -169,12 +170,18 @@
       const encode = `jsapi_ticket=${jsapi_ticket}&noncestr=${noncestr}&user_id=${user_id}&timestamp=${timestamp}`
       const signature = hex_sha1(encode)
       // 查询
-      const api = `/users/getUserInfo/?${encode}&signature=${signature}`
-      fetch(globalConfig.avatarCard.api_url + api,).then(res=> res.json()).then(res=> {
-        if (res.code == 0) {
-          this.extraInfo = res.data
-        }
-      })
+      try {
+        const {AVATAR_CARD_URL} = useCustomProps();
+        const api = `/users/getUserInfo/?${encode}&signature=${signature}`
+        fetch(AVATAR_CARD_URL + api,).then(res=> res.json()).then(res=> {
+          if (res.code == 0) {
+            this.extraInfo = res.data
+          }
+        })
+      } catch (error) {
+        
+      }
+    
     },
   })
 </script>

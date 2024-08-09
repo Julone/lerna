@@ -40,7 +40,8 @@ const globalConfig = {
     user_name: "cmdb_name"
   },
   avatarCard: {
-    enabled: false
+    enabled: false,
+    api_url: "/"
   }
 }
 const globalState = {
