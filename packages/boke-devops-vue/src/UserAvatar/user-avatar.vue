@@ -1,53 +1,55 @@
 <template>
-  <a-popover placement="bottomLeft" v-model:open="popoverVisible" :arrow="false" :mouseEnterDelay="0.1" :mouseLeaveDelay="0.3"
-             transitionName="ant-zoom-big"
-             :trigger="props.disabledPopover || global_disabled_avatar_card ? 'contextmenu' : 'hover'"  :overlayStyle="{zIndex: '9999',}">
+  <a-popover placement="bottomLeft" v-model:open="popoverVisible" :arrow="false" :mouseEnterDelay="0.1"
+    :mouseLeaveDelay="0.3" transitionName="ant-zoom-big"
+    :trigger="props.disabledPopover || props.disabled || global_disabled_avatar_card ? 'contextmenu' : 'hover'"
+    :overlayStyle="{ zIndex: '9999', }">
     <template #content>
-      <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }" @pinCard="popoverVisible = true"></userAvatarCard>
+      <userAvatarCard :userinfo="{ user_name, dept_name, user_id, user_icon }" @pinCard="popoverVisible = true">
+      </userAvatarCard>
     </template>
-  <div style="display:inline-flex" ref="avatarRef" >
-    <ATag class="boke-useravator-wrapper" :class="{
-      'wrapper-only-name': props.onlyName,
-      is_tag: props.tag && !props.color,
-      is_highlight: isHigh(),
-      disabled: props.disabled,
-      'only-icon-style': props.onlyIcon
-    }" v-bind="attrs" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }" v-if="data"
-      :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
-      <div class="left-icon" ref="targetRef" >
-          <AAvatar   v-if="!props.onlyName" :src="user_icon" :class="'avator-icon'"  :size="props.size"></AAvatar>
-        <span v-else>
-          <span v-if="props.linkType == 'text'">
-            {{ user_name }}
+    <div style="display:inline-flex" ref="avatarRef">
+      <ATag class="boke-useravator-wrapper" :class="{
+        'wrapper-only-name': props.onlyName,
+        is_tag: props.tag && !props.color,
+        is_highlight: isHigh(),
+        disabled: props.disabled,
+        'only-icon-style': props.onlyIcon
+      }" v-bind="attrs" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }" v-if="data"
+        :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
+        <div class="left-icon" ref="targetRef">
+          <AAvatar v-if="!props.onlyName" :src="user_icon" :class="'avator-icon'" :size="props.size"></AAvatar>
+          <span v-else>
+            <span v-if="props.linkType == 'text'">
+              {{ user_name }}
+            </span>
+            <el-link v-else :type="props.linkType" :underline="false">
+              {{ user_name }}
+            </el-link>
           </span>
-          <el-link v-else :type="props.linkType" :underline="false">
-            {{ user_name }}
-          </el-link>
-        </span>
-      </div>
-      <slot name="prefix"></slot>
-      <div class="label" v-if="!props.onlyIcon && !props.onlyName">
-        <span class="realname">
-          {{
-            isLoading
-              ? "加载中..."
-              : user_name
-          }}
-        </span>
-        <span class="id" v-if="!props.noID">
-          <span>{{ dept_name }}</span>
-        </span>
-      </div>
-      <div v-if="props.suffix">{{ props.suffix }}</div>
-      <AButton size="small" v-if="props.closable" @click.stop.prevent="onClose" :color="props.color" type="text"
-        shape="circle" style="margin-left: 3px; transform: translateY(0) scale(0.6); opacity: 0.8">
-        <template #icon>
-          <CloseOutlined />
-        </template>
-      </AButton>
-      <slot name="default" :scoped="data"></slot>
-    </ATag>
-  </div>
+        </div>
+        <slot name="prefix"></slot>
+        <div class="label" v-if="!props.onlyIcon && !props.onlyName">
+          <span class="realname">
+            {{
+              isLoading
+                ? "加载中..."
+                : user_name
+            }}
+          </span>
+          <span class="id" v-if="!props.noID">
+            <span>{{ dept_name }}</span>
+          </span>
+        </div>
+        <div v-if="props.suffix">{{ props.suffix }}</div>
+        <AButton size="small" v-if="props.closable" @click.stop.prevent="onClose" :color="props.color" type="text"
+          shape="circle" style="margin-left: 3px; transform: translateY(0) scale(0.6); opacity: 0.8">
+          <template #icon>
+            <CloseOutlined />
+          </template>
+        </AButton>
+        <slot name="default" :scoped="data"></slot>
+      </ATag>
+    </div>
   </a-popover>
 </template>
 
@@ -187,8 +189,8 @@ export default defineComponent({
     const onClose = () => {
       emit("close")
     }
-    const avatarRef =ref()
-    const getPopupContainer= ()=> {
+    const avatarRef = ref()
+    const getPopupContainer = () => {
       console.log(avatarRef.value, "targetRef.value")
       return avatarRef.value
     }

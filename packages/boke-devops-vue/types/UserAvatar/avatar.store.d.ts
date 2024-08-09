@@ -5,4 +5,5 @@ export declare const useCustomProps: () => {
     USERID_KEY: import("vue").Ref<any>;
     global_always_avatar_is_hihglight: any;
     global_disabled_avatar_card: boolean;
+    AVATAR_CARD_URL: any;
 };
