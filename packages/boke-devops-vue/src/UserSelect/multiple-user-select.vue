@@ -106,9 +106,9 @@ const props = defineProps([
   "tagRenderProps"
 ]);
 
-const  {NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY } =useCustomProps()
-
 const emits = defineEmits(["update:modelValue", "blur", "focus", "change"]);
+
+const  {NAME_KEY, AVATAR_KEY, DEPT_KEY,USERID_KEY } =useCustomProps()
 
 const innerdata = ref(null);
 const options = computed(() => {
@@ -124,6 +124,7 @@ const options = computed(() => {
       return !props.hideValues?.includes(user.value);
     });
 });
+
 const onNodeClick = (e) => {
   const target = _find(options.value, (item: any) => item.value == e);
   emits("change", target);
@@ -132,9 +133,6 @@ const onNodeClick = (e) => {
     innerdata.value = e;
   });
 };
-const onFocus = () => {
-  // userCenter.refreshUserCenter()
-};
 
 const onFilterOption = (inputValue, option) => {
   const description = option.label
@@ -142,7 +140,6 @@ const onFilterOption = (inputValue, option) => {
     .includes(inputValue.toLowerCase());
   return option.label.toLowerCase().includes(inputValue.toLowerCase());
 };
-
 
 onUpdated(() => {
   innerdata.value = props.modelValue;

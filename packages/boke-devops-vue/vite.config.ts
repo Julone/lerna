@@ -17,36 +17,27 @@ const banner = `/**
 `;
 // https://vitejs.dev/config/
 export default defineConfig({
-  build:
-    process.argv[2] === "build"
-      ? {
-          lib: {
-            entry: resolve(__dirname, "src/index.ts"),
-            name: "index",
-            formats: ["es", "umd", "cjs"],
-            fileName: (format) => `index.${format}.js`,
-          },
-          rollupOptions: {
-            external: ["vue", "lodash"],
-            output: {
-              name: "BokeDevopsVue",
-              banner: banner,
-              sourcemap: true,
-              globals: {
-                vue: "Vue",
-                lodash: "Lodash",
-              },
-            },
-            
-          },
-        }
-      : {
-          rollupOptions: {
-            input: {
-              index: resolve(__dirname, "index.html"),
-            },
-          },
+  build: {
+    lib: {
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "index",
+      formats: ["es", "umd", "cjs"],
+      fileName: (format) => `index.${format}.js`,
+    },
+    rollupOptions: {
+      external: ["vue", "lodash"],
+      output: {
+        name: "BokeDevopsVue",
+        banner: banner,
+        sourcemap: true,
+        globals: {
+          vue: "Vue",
+          lodash: "Lodash",
         },
+      },
+      
+    },
+  },
   plugins: [
     createVuePlugin({
       ssr: false,
@@ -73,7 +64,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./demo"),
+      "@": resolve(__dirname, "./src"),
       "boke-devops-ui": resolve(__dirname, "./src/index"),
     },
     dedupe: ["vue", "lodash"],
@@ -82,7 +73,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${resolve('src/style.global.less')}";`,
+          hack: `true; @import (reference) "${resolve('src/utils/style.global.less')}";`,
         },
         math: "strict",
         javascriptEnabled: true,

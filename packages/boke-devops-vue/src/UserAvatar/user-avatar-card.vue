@@ -109,10 +109,10 @@
 <script>
   import { defineComponent, createVNode } from 'vue'
   import {Tag as ATag ,Divider as ADivider, Space as ASpace, Button as AButton} from "ant-design-vue"
-  import {hex_sha1} from "./encode";
-  import {globalConfig}  from "./../Provider/store"
+  import {hex_sha1} from "../utils/encode";
   import {CaretDownOutlined} from "@ant-design/icons-vue"
   import {useCustomProps} from "./avatar.store"
+
   export default defineComponent({
     props: ['userinfo'],
     components: { MpsRoleTag: ATag,  MpsGroupTag: ATag, MpsDictTag: ATag ,ASpace,AButton,ATag,CaretDownOutlined},
