@@ -12,6 +12,9 @@
     "build": "pnpm run build:tsc && vite build",
     "lint": "eslint 'src/**/*.{js,ts,tsx,jsx}' 'examples/**/*.{js,ts,tsx,jsx}' --fix"
   },
+  "publishConfig": {
+    "registry": "https://nexus3.pocketcity.com/repository/boke-npm-private/"
+  },
   "files": [
     "dist",
     "types"

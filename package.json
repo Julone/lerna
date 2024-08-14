@@ -1,6 +1,7 @@
 {
   "name": "boke-devops",
   "version": "0.0.38",
+  "private": true,
   "workspaces": [
     "packages/*"
   ],
@@ -10,7 +11,7 @@
     "dev": "pnpm run -C packages/boke-docs dev",
     "build": "pnpm run -C packages/boke-devops-vue  build",
     "build:doc": "pnpm run -C packages/boke-docs build",
-    "publish": "pnpm run -C packages/boke-devops-vue publish --registry=https://nexus3.pocketcity.com/repository/boke-npm-private/",
+    "publish": "cd packages/boke-devops-vue && pnpm publish",
     "test": "vitest",
     "test:snap": "vitest -u"
   },
