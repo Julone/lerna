@@ -6,11 +6,11 @@
   ],
   "scripts": {
     "sa": "node ./scripts/index.mjs",
-    "dev": "cd packages/boke-docs && npm run dev",
-    "build": "cd packages/boke-devops-vue && npm run build",
-    "build:doc": "cd packages/boke-docs && npm run build",
     "release": "pnpm run sa release",
-    "publish": "cd packages/boke-devops-vue && pnpm publish --registry=https://nexus3.pocketcity.com/repository/boke-npm-private/",
+    "dev": "pnpm run -C packages/boke-docs dev",
+    "build": "pnpm run -C packages/boke-devops-vue  build",
+    "build:doc": "pnpm run -C packages/boke-docs build",
+    "publish": "pnpm run -C packages/boke-devops-vue publish --registry=https://nexus3.pocketcity.com/repository/boke-npm-private/",
     "test": "vitest",
     "test:snap": "vitest -u"
   },

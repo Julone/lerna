@@ -2,6 +2,7 @@
 
 exports[`user avatar is normal 1`] = `
 <div>
+  
   <div
     data-v-7871c292=""
     style="display: inline-flex;"
@@ -16,7 +17,6 @@ exports[`user avatar is normal 1`] = `
         class="left-icon"
         data-v-7871c292=""
       >
-        
         <span
           class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
           data-v-7871c292=""
@@ -26,8 +26,6 @@ exports[`user avatar is normal 1`] = `
             src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
           />
         </span>
-        <!---->
-        
       </div>
       
       
@@ -60,7 +58,10 @@ exports[`user avatar is normal 1`] = `
       <!---->
     </span>
   </div>
+  <!---->
+  
    无数据的时候 
+  
   <div
     data-v-7871c292=""
     style="display: inline-flex;"
@@ -75,7 +76,6 @@ exports[`user avatar is normal 1`] = `
         class="left-icon"
         data-v-7871c292=""
       >
-        
         <span
           class="avator-icon ant-avatar ant-avatar-circle css-dev-only-do-not-override-16pw25h"
           data-v-7871c292=""
@@ -88,8 +88,6 @@ exports[`user avatar is normal 1`] = `
             <!---->
           </span>
         </span>
-        <!---->
-        
       </div>
       
       
@@ -122,6 +120,8 @@ exports[`user avatar is normal 1`] = `
       <!---->
     </span>
   </div>
+  <!---->
+  
 </div>
 `;
 
@@ -130,6 +130,7 @@ exports[`with provider 1`] = `
   <h4>
     Inside of Provider
   </h4>
+  
   
   <div
     data-v-7871c292=""
@@ -145,7 +146,6 @@ exports[`with provider 1`] = `
         class="left-icon"
         data-v-7871c292=""
       >
-        
         <span
           class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
           data-v-7871c292=""
@@ -155,8 +155,6 @@ exports[`with provider 1`] = `
             src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
           />
         </span>
-        <!---->
-        
       </div>
       
       
@@ -189,10 +187,13 @@ exports[`with provider 1`] = `
       <!---->
     </span>
   </div>
+  <!---->
+  
   
   <h4>
     Out of Provider
   </h4>
+  
   <div
     data-v-7871c292=""
     style="display: inline-flex;"
@@ -207,7 +208,6 @@ exports[`with provider 1`] = `
         class="left-icon"
         data-v-7871c292=""
       >
-        
         <span
           class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
           data-v-7871c292=""
@@ -217,8 +217,6 @@ exports[`with provider 1`] = `
             src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
           />
         </span>
-        <!---->
-        
       </div>
       
       
@@ -251,5 +249,7 @@ exports[`with provider 1`] = `
       <!---->
     </span>
   </div>
+  <!---->
+  
 </div>
 `;

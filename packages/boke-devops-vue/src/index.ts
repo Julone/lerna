@@ -8,7 +8,7 @@ import { Button as BokeButton } from 'ant-design-vue/es'
 import { Segmented as BokeSegmented } from 'ant-design-vue/es'
 import BokeMicroAppProvider from './Microapp/MicroAppProvider.vue'
 // 导入样式变量
-import './style.global.less'
+import './utils/style.global.less'
 // STORE
 export * as avatarStore from './UserAvatar/avatar.store'
 // 支持ESM导出,可以直接在VUE项目中导入使用.

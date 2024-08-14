@@ -50,6 +50,7 @@ exports[`with provider 1`] = `
     Inside of Provider
   </h4>
   
+  
   <div
     data-v-7871c292=""
     style="display: inline-flex;"
@@ -64,7 +65,6 @@ exports[`with provider 1`] = `
         class="left-icon"
         data-v-7871c292=""
       >
-        
         <span
           class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
           data-v-7871c292=""
@@ -74,8 +74,6 @@ exports[`with provider 1`] = `
             src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
           />
         </span>
-        <!---->
-        
       </div>
       
       
@@ -108,10 +106,13 @@ exports[`with provider 1`] = `
       <!---->
     </span>
   </div>
+  <!---->
+  
   
   <h4>
     Out of Provider
   </h4>
+  
   <div
     data-v-7871c292=""
     style="display: inline-flex;"
@@ -126,7 +127,6 @@ exports[`with provider 1`] = `
         class="left-icon"
         data-v-7871c292=""
       >
-        
         <span
           class="avator-icon ant-avatar ant-avatar-circle ant-avatar-image css-dev-only-do-not-override-16pw25h"
           data-v-7871c292=""
@@ -136,8 +136,6 @@ exports[`with provider 1`] = `
             src="https://s1-imfile.feishucdn.com/static-resource/v1/v3_009p_b3b75461-971a-41e0-ac58-f755d34ef05g~?image_size=noop&cut_type=&quality=&format=png&sticker_format=.webp"
           />
         </span>
-        <!---->
-        
       </div>
       
       
@@ -170,5 +168,52 @@ exports[`with provider 1`] = `
       <!---->
     </span>
   </div>
+  <!---->
+  
+  <h4>
+    In of Drawer
+  </h4>
+  <button
+    aria-disabled="false"
+    class="el-button el-button--primary"
+    style="margin-left: 16px;"
+    type="button"
+  >
+    <!--v-if-->
+    <span
+      class=""
+    >
+      
+       open 
+      
+    </span>
+  </button>
+  <!--teleport start-->
+  <div
+    class="el-overlay"
+    style="z-index: 2001; display: none;"
+  >
+    
+    
+    <div
+      aria-describedby="el-id-5000-0"
+      aria-label="I am the title"
+      aria-modal="true"
+      class="el-drawer rtl"
+      role="dialog"
+      style="width: 30%;"
+    >
+      <span
+        class="el-drawer__sr-focus"
+        tabindex="-1"
+      />
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+    
+    
+  </div>
+  <!--teleport end-->
 </div>
 `;

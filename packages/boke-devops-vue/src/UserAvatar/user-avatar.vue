@@ -14,8 +14,7 @@
         is_highlight: isHigh(),
         disabled: props.disabled,
         'only-icon-style': props.onlyIcon
-      }" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }.
-      " v-bind="attrs"  v-if="data"
+      }" :style="{ padding: '2px', paddingRight: '12px', borderRadius: '50px' }" v-bind="attrs"  v-if="data"
         :color="props.color || 'default'" :title="data?.[DEPT_KEY]">
         <div class="left-icon" ref="targetRef">
           <AAvatar v-if="!props.onlyName" :src="user_icon" :class="'avator-icon'" :size="props.size"></AAvatar>
